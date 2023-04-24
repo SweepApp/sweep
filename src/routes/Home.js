@@ -8,6 +8,9 @@ export default function Home() {
       <div className="Home__cards">
         <Card />
         <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </div>
   )
