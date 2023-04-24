@@ -1,5 +1,5 @@
 #upperbar {
-  background-color: grey;
+  background-color: #37474F;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,12 +19,12 @@
 }
 #upperbar li a {
   font-size: 18px;
-  color: white;
+  color: #DEE5E7;
   text-decoration: none;
 }
 
 nav {
-  background-color: grey;
+  background-color: #37474F;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -41,7 +41,7 @@ nav li {
 }
 nav li i {
   font-size: 32px;
-  color: white;
+  color: #DEE5E7;
 }
 
 /*# sourceMappingURL=index.css.map */

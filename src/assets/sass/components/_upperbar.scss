@@ -1,5 +1,5 @@
 #upperbar {
-  background-color: grey;
+  background-color: $primary-color;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@
     display: inline-flex;
     a {
       font-size: 18px;
-      color: white;
+      color: $primary-text-color;
       text-decoration: none;
     }
   }

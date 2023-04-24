@@ -1,5 +1,5 @@
 nav {
-  background-color: grey;
+  background-color: $primary-color;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -14,7 +14,7 @@ nav {
     padding: 10px;
     i {
       font-size: 32px;
-      color: white;
+      color: $primary-text-color;
     }
   }
 }
