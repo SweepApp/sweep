@@ -1,5 +1,6 @@
 #upperbar {
   background-color: $primary-color;
+  backdrop-filter: blur(5px);
   border-bottom: 1px solid $primary-border-color;
   position: fixed;
   top: 0;

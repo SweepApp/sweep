@@ -1,5 +1,6 @@
 nav {
   background-color: $primary-color;
+  backdrop-filter: blur(5px);
   border-top: 1px solid $primary-border-color;
   position: fixed;
   bottom: 0;
