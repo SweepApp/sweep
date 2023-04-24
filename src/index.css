@@ -1,3 +1,28 @@
+#upperbar {
+  background-color: grey;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+#upperbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#upperbar li {
+  display: inline-flex;
+}
+#upperbar li a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
 nav {
   background-color: grey;
   position: fixed;
