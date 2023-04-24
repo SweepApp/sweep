@@ -1,5 +1,7 @@
-// import mobile view
+// import base
+@import "base/_mobile.scss";
 @import "base/_view.scss";
+@import "base/_fonts.scss";
 
 // import variables
 @import "utils/_colors.scss";
