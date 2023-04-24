@@ -37,10 +37,13 @@ body {
 #upperbar li {
   display: inline-flex;
 }
-#upperbar li a {
+#upperbar li button {
   font-size: 18px;
   color: #ffffff;
   text-decoration: none;
+  cursor: pointer;
+  background-color: unset;
+  border: unset;
 }
 
 nav {

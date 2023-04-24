@@ -17,10 +17,13 @@
   }
   li {
     display: inline-flex;
-    a {
+    button {
       font-size: 18px;
       color: $primary-text-color;
       text-decoration: none;
+      cursor: pointer;
+      background-color: unset;
+      border: unset;
     }
   }
 }
