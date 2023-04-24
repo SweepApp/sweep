@@ -10,7 +10,7 @@ export default function Navbar() {
       <ul>
         <li className={splitLocation[1] === "swipe" ? "active" : ""}>
           <a href="/swipe">
-            <i class="fa-solid fa-shuffle fa-fw"></i>
+            <i class="fa-solid fa-children fa-fw"></i>
           </a>
         </li>
         <li className={splitLocation[1] === "" ? "active" : ""}>

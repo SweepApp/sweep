@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <Upperbar>
         <ul>
-          <li>Découvrir</li>
+          <li>Duo</li>
         </ul>
       </Upperbar>
       <div className="Profile">
