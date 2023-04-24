@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 
 import Home from "./routes/Home";
 import Profile from "./routes/Profile";
-import Settings from "./routes/Settings";
+import Swipe from "./routes/Swipe";
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/settings" element={<Settings/>} />
+        <Route path="/swipe" element={<Swipe/>} />
       </Routes>
       </div>
       <Navbar/>

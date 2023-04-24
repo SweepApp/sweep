@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <Upperbar>
         <ul>
-          <li>Paramètres</li>
+          <li>Découvrir</li>
         </ul>
       </Upperbar>
       <div className="Profile">

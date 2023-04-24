@@ -8,9 +8,9 @@ export default function Navbar() {
   return (
     <nav>
       <ul>
-        <li className={splitLocation[1] === "settings" ? "active" : ""}>
-          <a href="/settings">
-            <i class="fa-solid fa-bars fa-fw"></i>
+        <li className={splitLocation[1] === "swipe" ? "active" : ""}>
+          <a href="/swipe">
+            <i class="fa-solid fa-shuffle fa-fw"></i>
           </a>
         </li>
         <li className={splitLocation[1] === "" ? "active" : ""}>
