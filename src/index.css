@@ -63,11 +63,15 @@ nav ul {
 }
 nav li {
   display: inline-block;
-  padding: 10px;
+  padding: 7px;
 }
 nav li i {
   font-size: 18px;
   color: #ffffff;
+}
+nav li.active {
+  background-color: rgb(78, 58, 255);
+  border-radius: 25%;
 }
 
 .card {
