@@ -6,7 +6,7 @@ export default function Card() {
       <div className="card__infos">
         <span class="card__infos__title">The Mandalorian</span>
         <ul className="card__tags">
-          <li>Science-fiction</li>
+          <li>Science-Fiction</li>
           <li>Western</li>
         </ul>
       </div>

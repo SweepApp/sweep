@@ -24,12 +24,14 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0,0,0,0) 90%);
     &__title {
       font-size: 24px;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(1px);
+      border-radius: 5px;
     }
     ul {
       display: flex;
       font-size: 16px;
       flex-direction: row;
+      width: 100%;
       padding: 5px 0 0 0;
       margin: 0;
       list-style-type: none;
@@ -37,8 +39,10 @@
     li {
       margin-right: 5px;
       padding: 2px 10px;
+      
+      max-height: 20px;
       background-color: $tags-background-color;
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(2px);
       border: 1px solid $tags-border-color;
       border-radius: 5px;
       &:last-child {
