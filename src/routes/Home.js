@@ -6,8 +6,7 @@ export default function Home({user}) {
     <>
       <Upperbar>
         <ul>
-          <li><button>Populaire</button></li>
-          {/* <li><button>Vos amis</button></li> */}
+          <li>Accueil</li>
         </ul>
       </Upperbar>
       <div className="Home" id="popular">
