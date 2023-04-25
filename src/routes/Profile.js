@@ -1,4 +1,5 @@
 import Upperbar from "../components/Upperbar";
+import Card from "../components/Card"; 
 
 export default function Home({user}) {
   return (
@@ -21,6 +22,12 @@ export default function Home({user}) {
               <span>26 Matchs</span>
             </div>
           </div>
+        </div>
+
+        <div className="profile__history">
+          <h2>Historique</h2>
+          <Card />
+          <Card />
         </div>
       </div>
     </>
