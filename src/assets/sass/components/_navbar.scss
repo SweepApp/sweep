@@ -24,7 +24,7 @@ nav {
       color: $primary-text-color;
     }
     &.active {
-      background-color: rgb(78, 58, 255);
+      background-color: $active-color;
       border-radius: 25%;
     }
   }
