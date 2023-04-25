@@ -108,7 +108,7 @@ nav li.active {
 }
 .card__infos__title {
   font-size: 24px;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(3px);
   border-radius: 5px;
 }
 .card__infos ul {
