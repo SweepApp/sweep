@@ -15,7 +15,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "react": "react-scripts start",
+    "start": "react-scripts start",
     "sass": "sass --watch ./src/assets/sass/main.scss:./src/index.css  --style expanded",
     "build": "react-scripts build"
   },
