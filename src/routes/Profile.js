@@ -1,7 +1,7 @@
 import Upperbar from "../components/Upperbar";
 import Card from "../components/Card"; 
 
-export default function Home({user}) {
+export default function Home({user, tmdb}) {
   return (
     <>
       <Upperbar>
