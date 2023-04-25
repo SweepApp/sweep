@@ -1,10 +1,16 @@
-import img from '../assets/images/starwars.jpg';
+import img from "../assets/images/starwars.jpg";
 
 export default function Card() {
   return (
     <div className="card">
-      <span>Star Wars</span>
-      <img src={ img } alt="..." />
+      <div className="card__infos">
+        <span class="card__infos__title">The Mandalorian</span>
+        <ul className="card__tags">
+          <li>Science-fiction</li>
+          <li>Western</li>
+        </ul>
+      </div>
+      <img src={img} alt="..." />
     </div>
-  )
+  );
 }
