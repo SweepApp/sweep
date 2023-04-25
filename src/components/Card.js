@@ -4,7 +4,7 @@ export default function Card() {
   return (
     <div className="card">
       <div className="card__infos">
-        <span class="card__infos__title">The Mandalorian</span>
+        <span className="card__infos__title">The Mandalorian</span>
         <ul className="card__tags">
           <li>Science-Fiction</li>
           <li>Western</li>
