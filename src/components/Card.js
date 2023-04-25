@@ -7,10 +7,10 @@ export default function Card(tmdb) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  const rdnInt = randomInterval(1, 15);
+  const randomPage = randomInterval(1, 15);
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb.api + '&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=' + rdnInt + '&year=2023&with_watch_monetization_types=flatrate')
+    fetch('https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb.api + '&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=' + randomPage + '&year=2023&with_watch_monetization_types=flatrate')
       .then(res => res.json())
       .then(
         (result) => {
