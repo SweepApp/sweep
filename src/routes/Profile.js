@@ -19,15 +19,13 @@ export default function Home({user, tmdb}) {
               <h1>{user}</h1>
             </div>
             <div className="profile__card__infos__stats">
-              <span>26 Matchs</span>
+              <span>0 Matchs</span>
             </div>
           </div>
         </div>
 
         <div className="profile__history">
           <h2>Historique</h2>
-          <Card />
-          <Card />
         </div>
       </div>
     </>
