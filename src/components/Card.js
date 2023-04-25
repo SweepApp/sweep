@@ -1,27 +1,4 @@
-import {useState, useEffect} from 'react';
-
-export default function Card(tmdb) {
-  const [api, setApi] = useState([]);
-
-  function randomInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  const randomPage = randomInterval(1, 15);
-
-  useEffect(() => {
-    fetch('https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb.api + '&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=' + randomPage + '&year=2023&vote_count.gte=150&vote_average.gte=5&with_watch_monetization_types=flatrate')
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setApi(result);
-        }
-      )
-  }, []
-  ) 
-
-  console.log(api)
-
+export default function Card({api}) {
   return (
     api.results !== undefined ? (
       api.results.map((movie) => 
