@@ -10,6 +10,8 @@ import Swipe from "./routes/Swipe";
 
 export default function App() {
   const user = "User";
+  const tmdbApiKey = process.env.REACT_APP_TMDB_API;
+  console.log(tmdbApiKey);
 
   return (
     <div className="App">

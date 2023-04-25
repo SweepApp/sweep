@@ -14,9 +14,6 @@ export default function Home({user}) {
         <div className="Home__cards">
           <Card />
           <Card />
-          <Card />
-          <Card />
-          <Card />
         </div>
       </div>
     </>
