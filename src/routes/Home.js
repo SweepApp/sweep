@@ -12,8 +12,7 @@ export default function Home({user, tmdb}) {
       <div className="Home" id="popular">
         <h1>Bonjour, { user } 👋</h1>
         <div className="Home__cards">
-          <Card />
-          <Card />
+          <Card api={tmdb}/>
         </div>
       </div>
     </>

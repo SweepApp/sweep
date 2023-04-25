@@ -1,6 +1,6 @@
 import img from "../assets/images/starwars.jpg";
 
-export default function Card() {
+export default function Card(tmdb) {
   return (
     <div className="card">
       <div className="card__infos">
