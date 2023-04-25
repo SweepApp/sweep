@@ -12,7 +12,7 @@ export default function Home({user}) {
       <div className="Profile">
         <div className="profile__card">
           <div className="profile__card__avatar">
-            <img src="https://avatars.githubusercontent.com/u/62829965?v=4" alt="avatar" />
+            <img src="https://github.com/identicons/user.png" alt="avatar" />
           </div>
           <div className="profile__card__infos">
             <div className="profile__card__infos__name">
