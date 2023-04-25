@@ -6,7 +6,9 @@ export default function Home({user, tmdb}) {
     <>
       <Upperbar>
         <ul>
+          <li><button><i class="fa-solid fa-filter"></i></button></li>
           <li>Accueil</li>
+          <li><button><i class="fa-solid fa-rotate"></i></button></li>
         </ul>
       </Upperbar>
       <div className="Home" id="popular">
