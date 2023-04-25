@@ -11,8 +11,6 @@ export default function Home({user, tmdb}) {
 
   const randomPage = randomInterval(1, 20);
 
-  let randomAscDesc = Math.random() < 0.5 ? "asc" : "desc";
-
   function randomValue(arr1, arr2) {
     return Math.random() < 0.5 ? arr1 : arr2;
   }
@@ -26,8 +24,6 @@ export default function Home({user, tmdb}) {
         setApi(result);
       }
     )
-
-    console.log(apiLink)
   }
 
   useEffect(() => {
@@ -37,22 +33,25 @@ export default function Home({user, tmdb}) {
 
   function refresh() {
     fetchData();
+    window.location.href = "#top"
   }
 
   return (
     <>
-      <Upperbar>
+      <Upperbar id="top">
         <ul>
           <li><button><i className="fa-solid fa-filter"></i></button></li>
           <li>Accueil</li>
           <li><button onClick={() => {refresh()}}><i className="fa-solid fa-rotate"></i></button></li>
         </ul>
       </Upperbar>
-      <div className="Home" id="popular">
+      <div className="Home">
         <h1>Bonjour, { user } 👋</h1>
         <div className="Home__cards">
           <Card api={api}/>
-          <button class="button" onClick={() => {refresh()}}><i className="fa-solid fa-rotate"></i></button>
+          <div className="home__reload">
+            <button class="button reload" onClick={() => {refresh()}}><i className="fa-solid fa-rotate"></i></button>
+          </div>
         </div>
       </div>
     </>

@@ -165,4 +165,22 @@ nav li.active {
   color: #ffffff;
 }
 
+.button {
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: unset;
+  border: unset;
+}
+.button.reload {
+  font-size: 32px;
+}
+
+.home__reload {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 45px;
+}
+
 /*# sourceMappingURL=index.css.map */

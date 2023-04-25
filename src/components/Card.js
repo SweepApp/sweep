@@ -15,7 +15,7 @@ export default function Card({api}) {
       </div>
       )
     ) : (
-      <p>Loading</p>
+      <p style={{fontSize:28,textAlign:"center",margin:0}}>Loading</p>
     )
   )
 }

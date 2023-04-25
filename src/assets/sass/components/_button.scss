@@ -1,0 +1,11 @@
+.button {
+  font-size: 18px;
+  color: $primary-text-color;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: unset;
+  border: unset;
+  &.reload {
+    font-size: 32px;
+  }
+}
