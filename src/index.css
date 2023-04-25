@@ -17,7 +17,7 @@ body {
 }
 
 #upperbar {
-  background-color: rgba(0, 0, 0, 0.8784313725);
+  background-color: rgba(0, 0, 0, 0.8470588235);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgba(87, 87, 87, 0.9647058824);
   position: fixed;
@@ -49,7 +49,7 @@ body {
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.8784313725);
+  background-color: rgba(0, 0, 0, 0.8470588235);
   backdrop-filter: blur(5px);
   border-top: 1px solid rgba(87, 87, 87, 0.9647058824);
   position: fixed;
