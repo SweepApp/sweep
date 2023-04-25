@@ -52,6 +52,7 @@ export default function Home({user, tmdb}) {
         <h1>Bonjour, { user } 👋</h1>
         <div className="Home__cards">
           <Card api={api}/>
+          <button class="button" onClick={() => {refresh()}}><i className="fa-solid fa-rotate"></i></button>
         </div>
       </div>
     </>
