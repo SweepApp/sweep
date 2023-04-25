@@ -9,14 +9,16 @@ import Profile from "./routes/Profile";
 import Swipe from "./routes/Swipe";
 
 export default function App() {
+  const user = "User";
+
   return (
     <div className="App">
       {/* <Upperbar/> */}
       <div className="View">
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/swipe" element={<Swipe/>} />
+        <Route path="/" element={<Home user={user}/>} />
+        <Route path="/profile" element={<Profile user={user}/>} />
+        <Route path="/swipe" element={<Swipe user={user}/>} />
       </Routes>
       </div>
       <Navbar/>
