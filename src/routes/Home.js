@@ -9,14 +9,17 @@ export default function Home({user, tmdb}) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  const randomPage = randomInterval(1, 15);
+  const randomPage = randomInterval(1, 20);
 
-  let asc = "asc";
-  let desc = "desc";
-  let randomAscDesc = Math.random() < 0.5 ? asc : desc;
+  let randomAscDesc = Math.random() < 0.5 ? "asc" : "desc";
+
+  function randomValue(arr1, arr2) {
+    return Math.random() < 0.5 ? arr1 : arr2;
+  }
 
   function fetchData() {
-    fetch('https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb + '&language=fr-FR&sort_by=popularity.' + randomAscDesc + '&include_adult=false&include_video=false&page=' + randomPage + '&year=2023&vote_count.gte=150&vote_average.gte=5&with_watch_monetization_types=flatrate')
+    let apiLink = 'https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb + '&language=fr-FR&sort_by=' + randomValue("popularity", "vote_average") + '.' + randomValue("asc", "desc") + '&include_adult=false&include_video=false&page=' + randomPage + '&year=2023&vote_count.gte=50&vote_average.gte=5&with_watch_monetization_types=flatrate'
+    fetch(apiLink)
     .then(res => res.json())
     .then(
       (result) => {
@@ -24,7 +27,7 @@ export default function Home({user, tmdb}) {
       }
     )
 
-    console.log(randomAscDesc + ' ' + randomPage)
+    console.log(apiLink)
   }
 
   useEffect(() => {
