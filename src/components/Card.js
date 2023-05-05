@@ -1,7 +1,8 @@
 export default function Card({api}) {
+  console.log(api)
   return (
-    api.results !== undefined ? (
-      api.results.map((movie, index) => 
+    api !== undefined ? (
+      api.map((movie, index) => 
       <div className="card">
         <div className="card__infos">
           <span className="card__infos__title">{movie.title}</span>
