@@ -16,7 +16,8 @@ export default function Home({user, tmdb}) {
   }
 
   function fetchData() {
-    let apiLink = 'https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb + '&language=fr-FR&sort_by=' + randomValue("popularity", "vote_average") + '.' + randomValue("asc", "desc") + '&include_adult=false&include_video=false&page=' + randomPage + '&year=2023&vote_count.gte=50&vote_average.gte=5&with_watch_monetization_types=flatrate'
+    // let apiLinkTMDB = 'https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb + '&language=fr-FR&sort_by=' + randomValue("popularity", "vote_average") + '.' + randomValue("asc", "desc") + '&include_adult=false&include_video=false&page=' + randomPage + '&year=2023&vote_count.gte=50&vote_average.gte=5&with_watch_monetization_types=flatrate'
+    let apiLink = 'http://localhost:8080/movies'
     fetch(apiLink)
     .then(res => res.json())
     .then(
