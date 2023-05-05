@@ -1,5 +1,4 @@
 export default function Card({api}) {
-  console.log(api)
   return (
     api !== undefined ? (
       api.map((movie, index) => 

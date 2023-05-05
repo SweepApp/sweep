@@ -2,22 +2,11 @@ import Card from "../components/Card";
 import Upperbar from "../components/Upperbar";
 import {useState, useEffect} from 'react';
 
-export default function Home({user, tmdb}) {
+export default function Home({user, apiKey}) {
   const [api, setApi] = useState([]);
 
-  function randomInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  const randomPage = randomInterval(1, 20);
-
-  function randomValue(arr1, arr2) {
-    return Math.random() < 0.5 ? arr1 : arr2;
-  }
-
   function fetchData() {
-    // let apiLinkTMDB = 'https://api.themoviedb.org/3/discover/movie?api_key='+ tmdb + '&language=fr-FR&sort_by=' + randomValue("popularity", "vote_average") + '.' + randomValue("asc", "desc") + '&include_adult=false&include_video=false&page=' + randomPage + '&year=2023&vote_count.gte=50&vote_average.gte=5&with_watch_monetization_types=flatrate'
-    let apiLink = 'http://localhost:8080/movies'
+    let apiLink = 'http://localhost:8080/movies?api_key=' + apiKey;
     fetch(apiLink)
     .then(res => res.json())
     .then(
