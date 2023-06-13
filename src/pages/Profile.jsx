@@ -28,7 +28,7 @@ export default function Home() {
       <div className="Profile">
         <div className="profile__card">
           <div className="profile__card__avatar">
-            <img src="https://github.com/identicons/user.png" alt="avatar" />
+            <img src={`https://github.com/identicons/${username}.png`} alt="avatar" />
           </div>
           <div className="profile__card__infos">
             <div className="profile__card__infos__name">
