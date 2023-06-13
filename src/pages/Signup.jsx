@@ -9,10 +9,12 @@ export default function Signup() {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(signup(username, email, password));
+    navigate("/", { replace: true })
   };
 
   return (

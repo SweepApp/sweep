@@ -8,10 +8,12 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(login(username, password));
+    navigate("/", { replace: true })
   };
 
   return (
