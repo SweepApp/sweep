@@ -69,7 +69,7 @@ nav li.active {
   flex-direction: row;
   width: 100%;
   height: 150px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   cursor: pointer;
   background-color: #141414;
   border: 1px solid rgba(87, 87, 87, 0.9647058824);
