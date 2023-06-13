@@ -14,6 +14,8 @@ export default function Home({ user, apiKey }) {
       });
   }
 
+  console.log(api)
+
   useEffect(() => {
     fetchData();
   }, []);

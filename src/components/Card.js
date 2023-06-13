@@ -1,21 +1,39 @@
-export default function Card({api}) {
-  return (
-    api !== undefined ? (
-      api.map((movie, index) => 
+export default function Card({ api }) {
+  function sliceDate(date) {
+    return date.slice(0, 4);
+  }
+
+  return api !== undefined ? (
+    api.map((movie, index) => (
       <div className="card">
+        <div className="card__poster">
+          <img
+            src={
+              "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
+              movie.poster_path
+            }
+            alt={movie.name}
+          />
+        </div>
         <div className="card__infos">
-          <span className="card__infos__title">{movie.title}</span>
-          <ul className="card__tags">
-            <li><i className="fa-solid fa-calendar-days"></i> {movie.release_date}</li>
-            <li><i className="fa-regular fa-star"></i> {movie.vote_average}</li>
-            <li><i className="fa-solid fa-users"></i> {movie.vote_count}</li>
+          <ul>
+            <li className="card__infos title">{movie.name}</li>
+            <li>
+              <i className="fa-solid fa-fw fa-calendar-days"></i>{sliceDate(movie.first_air_date)} - {movie.last_air_date !== null ? sliceDate(movie.last_air_date) : "Present"}
+            </li>
+            <li>
+              <i className="fa-solid fa-fw fa-tv"></i>{movie.number_of_seasons > 1 ? movie.number_of_seasons + " seasons" : movie.number_of_seasons + " season"} 
+            </li>
+            <li className="tags">
+              {movie.genres.map((genre, index) => index < 2 && (
+                <span key={index}>{genre.name}</span>
+              ))}
+            </li>
           </ul>
         </div>
-        <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + movie.poster_path} alt="..." />
       </div>
-      )
-    ) : (
-      <p style={{fontSize:28,textAlign:"center",margin:0}}>Loading</p>
-    )
-  )
+    ))
+  ) : (
+    <p style={{ fontSize: 28, textAlign: "center", margin: 0 }}>Loading</p>
+  );
 }
