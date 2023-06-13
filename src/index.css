@@ -172,12 +172,6 @@ nav li.active {
   font-size: 32px;
 }
 
-.home__reload {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 45px;
-}
-
 .details__poster img {
   position: absolute;
   z-index: -1;
