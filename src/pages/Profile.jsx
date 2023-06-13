@@ -1,8 +1,16 @@
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Upperbar from "../components/Upperbar";
 
 export default function Home() {
   let username = useSelector((state) => state.usersData.username);
+  let token = useSelector((state) => state.usersData.token);
+
+  const navigate = useNavigate();
+
+  if (!token) {
+    navigate("/login", { replace: true });
+  }
 
   return (
     <>

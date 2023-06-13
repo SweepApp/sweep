@@ -2,11 +2,19 @@ import Card from "../components/Card";
 import Upperbar from "../components/Upperbar";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [api, setApi] = useState([]);
 
   let username = useSelector((state) => state.usersData.username);
+  let token = useSelector((state) => state.usersData.token);
+
+  const navigate = useNavigate();
+
+  if (!token) {
+    navigate("/login", { replace: true });
+  }
 
   function fetchData() {
     let apiLink = "http://localhost:8080/movies?api_key=test";
