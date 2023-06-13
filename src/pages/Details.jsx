@@ -17,6 +17,8 @@ export default function Details() {
     return hours + "h" + minutes;
   }
 
+  console.log(movieDetails)
+
   return (
     <>
       <Upperbar title={movieDetails.title} />
@@ -43,17 +45,13 @@ export default function Details() {
             </div>
             <div className="details__infos__genres">
               <ul>
-                {movieDetails.genres.map((genre, index) => (
-                  <li key={index}>{genre.name}</li>
-                ))}
+                {movieDetails.genres}
               </ul>
             </div>
             <div className="details__infos__credits">
               <h3>Cast</h3>
               <ul>
-                {movieDetails.credits.cast.slice(0, 10).map((actor, index) => (
-                  <li key={index}>{actor.name}</li>
-                ))}
+                <li>{movieDetails.credits}</li>
               </ul>
             </div>
             <div className="details__infos__details">
@@ -64,11 +62,7 @@ export default function Details() {
                     <tr>
                       <td>Production</td>
                       <td>
-                        {movieDetails.production_companies.map(
-                          (company, index) => (
-                            <span key={index}>{company.name}</span>
-                          )
-                        )}
+                        {movieDetails.production_companies}
                       </td>
                     </tr>
                     <tr>
@@ -78,10 +72,6 @@ export default function Details() {
                     <tr>
                       <td>Revenue</td>
                       <td>{movieDetails.revenue}$</td>
-                    </tr>
-                    <tr>
-                      <td>Original language</td>
-                      <td>{movieDetails.original_language}</td>
                     </tr>
                   </tbody>
                 </table>
