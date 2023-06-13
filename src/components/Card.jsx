@@ -1,6 +1,10 @@
 import propTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { setMovieDetails } from "../redux/movieDetails/reducer";
 
 export default function Card({ api }) {
+  const dispatch = useDispatch();
+
   function sliceDate(date) {
     return date.slice(0, 4);
   }
@@ -14,9 +18,13 @@ export default function Card({ api }) {
     return hours + "h" + minutes;
   }
 
+  function openDetails(movie) {
+    dispatch(setMovieDetails(movie));
+  }
+
   return api !== undefined ? (
     api.map((movie, index) => (
-      <div className="card" key={index}>
+      <div className="card" key={index} onClick={() => openDetails(movie)}>
         <div className="card__poster">
           <img
             src={
