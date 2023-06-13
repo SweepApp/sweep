@@ -10,7 +10,7 @@ export default function Signup() {
               <input type="text" placeholder="Email" required/>
               <input type="password" placeholder="Password" required/>
               <input type="password" placeholder="Confirm password" required/>
-              <button type="submit">Sign Up</button>
+              <button type="submit" className="sign">Sign Up</button>
             </form>
           </div>
           <div className="sign__container__links">
