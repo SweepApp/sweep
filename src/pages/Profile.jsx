@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { clearPersistedState } from "../redux";
 import Upperbar from "../components/Upperbar";
 
 export default function Home() {
@@ -12,9 +13,15 @@ export default function Home() {
     navigate("/login", { replace: true });
   }
 
+  const handleLogout = () => {
+    navigate("/login");
+    navigate(0);
+    clearPersistedState();
+  };
+
   return (
     <>
-      <Upperbar title={`@${username}`}/>
+      <Upperbar title={`@${username}`} />
       <div className="Profile">
         <div className="profile__card">
           <div className="profile__card__avatar">
@@ -33,7 +40,11 @@ export default function Home() {
         <div className="profile__history">
           <h2>Historique</h2>
         </div>
+
+        <div className="profile__disconnect">
+          <button className="wide" onClick={handleLogout}>Log out</button>
+        </div>
       </div>
     </>
-  )
+  );
 }
