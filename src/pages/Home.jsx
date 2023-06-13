@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!token) {
-      navigate("/login", { replace: true });
+      navigate("/login");
     }
   }, [token, navigate]);
 
