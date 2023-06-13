@@ -307,4 +307,22 @@ a:hover {
   color: #b3b3b3;
 }
 
+.sign__container {
+  width: 100%;
+}
+.sign__container__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 10px;
+}
+.sign__container__links a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
 /*# sourceMappingURL=index.css.map */

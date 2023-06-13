@@ -14,7 +14,7 @@ export default function Signup() {
             </form>
           </div>
           <div className="sign__container__links">
-            <a href="#">Already have an account? Log in</a>
+            <a href="/login">Already have an account? Log in</a>
           </div>
         </div>
       </div>

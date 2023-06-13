@@ -8,12 +8,12 @@ export default function Login() {
             <form>
               <input type="text" placeholder="Email" required/>
               <input type="password" placeholder="Password" required/>
-              <button type="submit">Sign In</button>
+              <button type="submit" className="sign">Sign In</button>
             </form>
           </div>
           <div className="sign__container__links">
             <a href="#">Forgot Password?</a>
-            <a href="#">Create Account</a>
+            <a href="/signup">Create Account</a>
           </div>
         </div>
       </div>
