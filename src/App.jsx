@@ -6,18 +6,19 @@ import Home from "./routes/Home";
 import Profile from "./routes/Profile";
 import Swipe from "./routes/Swipe";
 
-export default function App() {
-
+function App() {
   return (
-    <div className="App">
+    <>
       <div className="View">
       <Routes>
-        <Route path="/" element={<Home user={username} apiKey={apiKey} />} />
-        <Route path="/profile" element={<Profile user={username} apiKey={apiKey}/>} />
-        <Route path="/swipe" element={<Swipe user={username} apiKey={apiKey}/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/swipe" element={<Swipe />} />
       </Routes>
       </div>
       <Navbar/>
-    </div>
+    </>
   );
 }
+
+export default App;

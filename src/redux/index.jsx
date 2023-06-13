@@ -1,6 +1,7 @@
-import { combineReducers, configureStore } from "redux";
-import { movieDetailsSlice } from "./movieDetails/reducer";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
+import { movieDetailsSlice } from "./movieDetails/reducer";
+import thunk from 'redux-thunk';
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
@@ -15,8 +16,11 @@ const rootReducer = combineReducers({
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const middleware = [thunk];
+
 export const store = configureStore({
   reducer: persistedReducer,
+  middleware: middleware,
 });
 
 export const persistor = persistStore(store);
