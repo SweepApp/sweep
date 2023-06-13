@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import Upperbar from "../components/Upperbar";
-import Card from "../components/Card"; 
 
 export default function Home({user, tmdb}) {
   let username = useSelector((state) => state.usersData.username);
