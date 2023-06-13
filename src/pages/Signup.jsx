@@ -1,19 +1,20 @@
-export default function Login() {
+export default function Signup() {
   return (
     <div className="login">
       <div className="sign">
         <div className="sign__container">
-          <h1>Log in</h1>
+          <h1>Create an account</h1>
           <div className="sign__container__form">
             <form>
+              <input type="text" placeholder="Username" required/>
               <input type="text" placeholder="Email" required/>
               <input type="password" placeholder="Password" required/>
-              <button type="submit">Sign In</button>
+              <input type="password" placeholder="Confirm password" required/>
+              <button type="submit">Sign Up</button>
             </form>
           </div>
           <div className="sign__container__links">
-            <a href="#">Forgot Password?</a>
-            <a href="#">Create Account</a>
+            <a href="#">Already have an account? Log in</a>
           </div>
         </div>
       </div>

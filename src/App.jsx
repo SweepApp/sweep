@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import Swipe from "./pages/Swipe";
 import Details from "./pages/Details";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/swipe" element={<Swipe />} />
         <Route path="/details" element={<Details />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       </div>
       <Navbar/>
