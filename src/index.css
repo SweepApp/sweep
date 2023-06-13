@@ -112,6 +112,9 @@ nav li.active {
   color: #fff;
   font-size: 0.8rem;
 }
+.card__infos i {
+  margin-right: 5px;
+}
 
 .profile__card {
   display: flex;
