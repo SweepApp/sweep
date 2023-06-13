@@ -33,7 +33,7 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <button type="submit" className="signmovies?api_key=test">
+              <button type="submit" className="sign">
                 Sign In
               </button>
             </form>
