@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Upperbar from "../components/Upperbar";
 
-export default function Home({user, tmdb}) {
+export default function Home() {
   let username = useSelector((state) => state.usersData.username);
 
   return (
