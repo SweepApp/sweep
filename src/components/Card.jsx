@@ -51,6 +51,15 @@ export default function Card({ api }) {
             </li>
           </ul>
         </div>
+        <div className="card__bg">
+          <img
+            src={
+              "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" +
+              movie.backdrop_path
+            }
+            alt={movie.name}
+          />
+        </div>
       </div>
     ))
   ) : (
