@@ -4,6 +4,11 @@ import Upperbar from "../components/Upperbar";
 export default function Details() {
   const movieDetails = useSelector((state) => state.movieDetails);
 
+    if (movieDetails.title === null) {
+      window.location.href = "/";
+      console.log('test')
+    }
+
   function sliceDate(date) {
     return date.slice(0, 4);
   }
@@ -16,8 +21,6 @@ export default function Details() {
     }
     return hours + "h" + minutes;
   }
-
-  console.log(movieDetails)
 
   return (
     <>
