@@ -6,7 +6,7 @@ export default function Home({ user, apiKey }) {
   const [api, setApi] = useState([]);
 
   function fetchData() {
-    let apiLink = "http://localhost:8080/tv?api_key=test";
+    let apiLink = "http://localhost:8080/movies?api_key=test";
     fetch(apiLink)
       .then((res) => res.json())
       .then((result) => {

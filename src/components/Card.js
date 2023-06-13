@@ -3,6 +3,15 @@ export default function Card({ api }) {
     return date.slice(0, 4);
   }
 
+  function formatTime(time) {
+    let hours = Math.floor(time / 60);
+    let minutes = time % 60;
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    return hours + "h" + minutes;
+  }
+
   return api !== undefined ? (
     api.map((movie, index) => (
       <div className="card">
@@ -17,17 +26,15 @@ export default function Card({ api }) {
         </div>
         <div className="card__infos">
           <ul>
-            <li className="card__infos title">{movie.name}</li>
+            <li className="card__infos title">{movie.title}</li>
             <li>
-              <i className="fa-solid fa-fw fa-calendar-days"></i>{sliceDate(movie.first_air_date)} - {movie.last_air_date !== null ? sliceDate(movie.last_air_date) : "Present"}
+              {movie.tagline}
             </li>
             <li>
-              <i className="fa-solid fa-fw fa-tv"></i>{movie.number_of_seasons > 1 ? movie.number_of_seasons + " seasons" : movie.number_of_seasons + " season"} 
+              <i className="fa-solid fa-fw fa-calendar-days"></i>{sliceDate(movie.release_date)}
             </li>
-            <li className="tags">
-              {movie.genres.map((genre, index) => index < 2 && (
-                <span key={index}>{genre.name}</span>
-              ))}
+            <li>
+              <i className="fa-regular fa-fw fa-clock"></i>{formatTime(movie.runtime)} 
             </li>
           </ul>
         </div>
