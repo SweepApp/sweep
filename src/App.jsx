@@ -8,8 +8,6 @@ import Swipe from "./pages/Swipe";
 import Details from "./pages/Details";
 import Login from "./pages/Login";
 
-import bg from "/src/assets/img/bg.jpg";
-
 function App() {
   return (
     <>
@@ -23,9 +21,6 @@ function App() {
       </Routes>
       </div>
       <Navbar/>
-      <div className="bg">
-          <img src={bg} alt="background" />
-        </div>
     </>
   );
 }
