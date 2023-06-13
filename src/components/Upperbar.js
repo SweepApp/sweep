@@ -1,7 +1,7 @@
-export default function Upperbar({ children }) {
+export default function Upperbar(props) {
   return (
     <div id="upperbar">
-      { children }
+      <h2>{props.title}</h2>
     </div>
   )
 }

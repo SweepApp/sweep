@@ -4,11 +4,7 @@ import Card from "../components/Card";
 export default function Home({user, tmdb}) {
   return (
     <>
-      <Upperbar>
-        <ul>
-          <li>@{user}</li>
-        </ul>
-      </Upperbar>
+      <Upperbar title={`@${user}`}/>
       <div className="Profile">
         <div className="profile__card">
           <div className="profile__card__avatar">

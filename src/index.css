@@ -27,25 +27,9 @@ body {
   height: 50px;
   z-index: 100;
 }
-#upperbar ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-#upperbar li {
-  display: inline-flex;
+#upperbar h2 {
   font-size: 18px;
-}
-#upperbar li button {
-  font-size: 18px;
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: unset;
-  border: unset;
+  text-align: center;
 }
 
 nav {

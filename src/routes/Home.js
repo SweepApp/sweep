@@ -1,46 +1,32 @@
 import Card from "../components/Card";
 import Upperbar from "../components/Upperbar";
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from "react";
 
-export default function Home({user, apiKey}) {
+export default function Home({ user, apiKey }) {
   const [api, setApi] = useState([]);
 
   function fetchData() {
-    let apiLink = 'http://localhost:8080/movies?api_key=' + apiKey;
+    let apiLink = "http://localhost:8080/tv?api_key=test";
     fetch(apiLink)
-    .then(res => res.json())
-    .then(
-      (result) => {
+      .then((res) => res.json())
+      .then((result) => {
         setApi(result);
-      }
-    )
+      });
   }
 
   useEffect(() => {
     fetchData();
-  }, []
-  ) 
-
-  function refresh() {
-    fetchData();
-    window.location.href = "#top"
-  }
+  }, []);
 
   return (
     <>
-      <Upperbar id="top">
-        <ul>
-          <li><button><i className="fa-solid fa-filter"></i></button></li>
-          <li>Accueil</li>
-          <li><button onClick={() => {refresh()}}><i className="fa-solid fa-rotate"></i></button></li>
-        </ul>
-      </Upperbar>
+      <Upperbar id="top" title="Home" />
       <div className="Home">
-        <h1>Bonjour, { user } 👋</h1>
+        <h1>Hello, {user} 👋</h1>
         <div className="Home__cards">
-          <Card api={api}/>
+          <Card api={api} />
         </div>
       </div>
     </>
-  )
+  );
 }
