@@ -1,6 +1,6 @@
 import { setAuth } from "./reducer";
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (username, password) => async (dispatch) => {
   try {
     const response = await fetch("http://localhost:8080/api/v1/user/login", {
       method: "POST",
@@ -9,7 +9,7 @@ export const login = (email, password) => async (dispatch) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email,
+        username: username,
         password: password,
       }),
     });
@@ -18,7 +18,7 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch(
       setAuth({
-        email: email,
+        username: username,
         isLoggedIn: true,
         token: data.body["token"],
       })

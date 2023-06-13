@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../redux/auth/action";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(email, password));
+    dispatch(login(username, password));
   };
 
   return (
@@ -23,13 +23,13 @@ export default function Login() {
             <form onSubmit={handleFormSubmit}>
               <input
                 type="text"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
               <input
                 type="password"
-                placeholder="Confirm password"
+                placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
