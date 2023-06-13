@@ -276,7 +276,7 @@ nav li.active {
   object-fit: cover;
   object-position: center;
   filter: blur(100px);
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 /*# sourceMappingURL=index.css.map */
