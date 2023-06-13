@@ -1,9 +1,11 @@
 import propTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { setMovieDetails } from "../redux/movieDetails/reducer";
+import { useNavigate } from "react-router";
 
 export default function Card({ api }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function sliceDate(date) {
     return date.slice(0, 4);
@@ -20,6 +22,7 @@ export default function Card({ api }) {
 
   function openDetails(movie) {
     dispatch(setMovieDetails(movie));
+    navigate("/details");
   }
 
   return api !== undefined ? (
