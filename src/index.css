@@ -85,7 +85,7 @@ nav li.active {
   object-fit: cover;
   object-position: center;
   filter: blur(10px);
-  opacity: 0.25;
+  opacity: 0.2;
 }
 .card__poster img {
   width: 100px;
@@ -263,6 +263,20 @@ nav li.active {
 }
 .details__infos__details__box td.title {
   color: #b3b3b3;
+}
+
+.bg img {
+  position: fixed;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(100px);
+  opacity: 0.2;
 }
 
 /*# sourceMappingURL=index.css.map */
