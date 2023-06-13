@@ -25,7 +25,7 @@ export default function Details() {
   return (
     <>
       <Upperbar title={movieDetails.title} />
-      <div className="Details">
+      <div className="details">
         <div className="details__poster">
           <img
             src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
@@ -47,6 +47,7 @@ export default function Details() {
               <p>{movieDetails.overview}</p>
             </div>
             <div className="details__infos__genres">
+              <h3>Genres</h3>
               <ul>
                   {movieDetails.genres.slice(0, 3).map((genre) => (
                     <li key={genre.id}>{genre}</li>
@@ -56,9 +57,14 @@ export default function Details() {
             <div className="details__infos__credits">
               <h3>Cast</h3>
               <ul>
-                  {movieDetails.credits.slice(0, 10).map((actor) => (
-                    <li key={actor.id}>{actor}</li>
-                  ))}
+                {movieDetails.credits.slice(0, 3).map((actor) => (
+                  <li key={actor.id}>{actor}</li>
+                ))}
+              </ul>
+              <ul>
+                {movieDetails.credits.slice(3, 6).map((actor) => (
+                  <li key={actor.id}>{actor}</li>
+                ))}
               </ul>
             </div>
             <div className="details__infos__details">
@@ -67,7 +73,7 @@ export default function Details() {
                 <table>
                   <tbody>
                     <tr>
-                      <td>Production</td>
+                      <td className="title">Production</td>
                       <td>
                         {movieDetails.production_companies.map((company) => (
                           <span key={company.id}>{company}</span>
@@ -75,11 +81,11 @@ export default function Details() {
                       </td>
                     </tr>
                     <tr>
-                      <td>Budget</td>
+                      <td className="title">Budget</td>
                       <td>{movieDetails.budget}$</td>
                     </tr>
                     <tr>
-                      <td>Revenue</td>
+                      <td className="title">Revenue</td>
                       <td>{movieDetails.revenue}$</td>
                     </tr>
                   </tbody>
