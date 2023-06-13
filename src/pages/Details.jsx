@@ -56,16 +56,27 @@ export default function Details() {
             </div>
             <div className="details__infos__credits">
               <h3>Cast</h3>
-              <ul>
-                {movieDetails.credits.slice(0, 3).map((actor) => (
-                  <li key={actor.id}>{actor}</li>
-                ))}
-              </ul>
-              <ul>
-                {movieDetails.credits.slice(3, 6).map((actor) => (
-                  <li key={actor.id}>{actor}</li>
-                ))}
-              </ul>
+              <table>
+                <tbody>
+                  <tr>
+                  <td>
+                    {movieDetails.credits.slice(0, 4).map((actor, index) => (
+                      <span key={index}>
+                        {actor}
+                      </span>
+                    ))}
+                  </td>
+                  <hr />
+                  <td>
+                    {movieDetails.credits.slice(4, 8).map((actor, index) => (
+                      <span key={index}>
+                        {actor}
+                      </span>
+                    ))}
+                  </td>
+                  </tr>
+                </tbody> 
+              </table>
             </div>
             <div className="details__infos__details">
               <h3>Details</h3>

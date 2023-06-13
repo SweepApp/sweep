@@ -57,23 +57,26 @@
       }
     }
     &__credits {
-      ul {
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        li {
-          height: 50px;
-          width: 100px;
+      table {
+        border: 1px solid $primary-border-color;
+        background-color: transparentize($background-color, 0.7);
+        border-radius: 5px;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        margin: 0 auto;
+        tr {
+          padding: 0;
           display: flex;
           flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          background-color: transparentize($background-color, 0.7);
-          backdrop-filter: opacity(0.5);
-          border: 1px solid $primary-border-color;
-          padding: 0.2rem 0.5rem;
-          border-radius: 5px;
+          td {
+            display: flex;
+            flex-direction: column;
+            color: darken($primary-text-color, 10%);
+          }
+        }
+        hr {
+          border: none;
+          border-left: 1px solid $primary-border-color;
           margin: 0 0.5rem;
         }
       }
