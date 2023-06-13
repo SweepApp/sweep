@@ -28,8 +28,8 @@ export const movieDetailsSlice = createSlice({
       state.runtime = runtime;
       state.poster_path = poster_path;
       state.overview = overview;
-      state.genres = Object.values(genres[0]).join('');
-      state.production_companies = Object.values(production_companies[0]).join('');
+      state.genres = Object.values(genres[0]).slice(0, -1).map(value => value.split('-'));
+      state.production_companies = Object.values(production_companies[0]).slice(0, -1).map(value => value.split('-'));
       state.credits = credits;
       state.revenue = revenue;
       state.budget = budget;
