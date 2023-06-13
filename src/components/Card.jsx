@@ -14,7 +14,7 @@ export default function Card({ api }) {
 
   return api !== undefined ? (
     api.map((movie, index) => (
-      <div className="card">
+      <div className="card" key={index}>
         <div className="card__poster">
           <img
             src={
