@@ -39,8 +39,8 @@ export default function Details() {
               <h2>{movieDetails.tagline}</h2>
             </div>
             <div className="details__infos__header__row">
-              <span>{sliceDate(movieDetails.release_date)}</span>
-              <span>{formatTime(movieDetails.runtime)}</span>
+              <span><i className="fa-regular fa-calendar"></i> {sliceDate(movieDetails.release_date)}</span>
+              <span><i className="fa-regular fa-clock"></i> {formatTime(movieDetails.runtime)}</span>
             </div>
             <div className="details__infos__overview">
               <h3>Overview</h3>
