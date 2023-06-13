@@ -1,11 +1,14 @@
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/");
 
-  return (
+  const token = useSelector((state) => state.usersData.token);
+
+  return token && (
     <nav>
       <ul>
         <li className={splitLocation[1] === "swipe" ? "active" : ""}>
