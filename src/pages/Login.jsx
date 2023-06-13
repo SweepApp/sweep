@@ -10,9 +10,9 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    dispatch(login(username, password));
+    await dispatch(login(username, password));
     navigate("/", { replace: true })
   };
 
