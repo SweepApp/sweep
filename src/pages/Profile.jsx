@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { clearPersistedState } from "../redux";
+import { useEffect } from "react";
 import Upperbar from "../components/Upperbar";
 
 export default function Home() {
@@ -9,9 +10,11 @@ export default function Home() {
 
   const navigate = useNavigate();
 
-  if (!token) {
-    navigate("/login", { replace: true });
-  }
+  useEffect(() => {
+    if (!token) {
+      navigate("/login", { replace: true });
+    }
+  }, [token, navigate]);
 
   const handleLogout = () => {
     navigate("/login");

@@ -12,9 +12,11 @@ export default function Home() {
 
   const navigate = useNavigate();
 
-  if (!token) {
-    navigate("/login", { replace: true });
-  }
+  useEffect(() => {
+    if (!token) {
+      navigate("/login", { replace: true });
+    }
+  }, [token, navigate]);
 
   function fetchData() {
     let apiLink = "http://localhost:8080/movies?api_key=test";
