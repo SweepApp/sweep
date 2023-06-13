@@ -2,9 +2,7 @@ export default function Sign(login) {
   return login === true ? (
     <div className="sign">
       <div className="sign__container">
-        <div className="sign__container__logo">
-          <img src="/src/assets/img/logo.png" alt="logo" />
-        </div>
+        <h1>Log in</h1>
         <div className="sign__container__form">
           <form>
             <input type="text" placeholder="Email" />
@@ -21,9 +19,7 @@ export default function Sign(login) {
   ) : (
     <div className="sign">
       <div className="sign__container">
-        <div className="sign__container__logo">
-          <img src="/src/assets/img/logo.png" alt="logo" />
-        </div>
+        <h1>Create an account</h1>
         <div className="sign__container__form">
           <form>
             <input type="text" placeholder="Username" required />
