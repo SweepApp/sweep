@@ -48,13 +48,17 @@ export default function Details() {
             </div>
             <div className="details__infos__genres">
               <ul>
-                {movieDetails.genres}
+                  {movieDetails.genres.slice(0, 3).map((genre) => (
+                    <li key={genre.id}>{genre}</li>
+                  ))}
               </ul>
             </div>
             <div className="details__infos__credits">
               <h3>Cast</h3>
               <ul>
-                <li>{movieDetails.credits}</li>
+                  {movieDetails.credits.slice(0, 10).map((actor) => (
+                    <li key={actor.id}>{actor}</li>
+                  ))}
               </ul>
             </div>
             <div className="details__infos__details">
@@ -65,7 +69,9 @@ export default function Details() {
                     <tr>
                       <td>Production</td>
                       <td>
-                        {movieDetails.production_companies}
+                        {movieDetails.production_companies.map((company) => (
+                          <span key={company.id}>{company}</span>
+                        ))}
                       </td>
                     </tr>
                     <tr>
