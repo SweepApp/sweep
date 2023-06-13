@@ -1,3 +1,5 @@
+import propTypes from "prop-types";
+
 export default function Card({ api }) {
   function sliceDate(date) {
     return date.slice(0, 4);
@@ -44,3 +46,7 @@ export default function Card({ api }) {
     <p style={{ fontSize: 28, textAlign: "center", margin: 0 }}>Loading</p>
   );
 }
+
+Card.propTypes = {
+  api: propTypes.array,
+};
