@@ -45,32 +45,31 @@ export default function Home() {
         </div>
 
         <div className="duo__content">
-            {friend ? ( // Temporary solution for testing purposes
-              <h2>Test</h2>
-            ) : (
-              <h2>Add friends to start swiping!</h2>
-            )}
-        </div>
-
-        {modalState && (
-          <div className="modal">
-            <div className="modal__header">
-              <h2>Add friends</h2>
-              <button className="close no" onClick={() => closeModal()}>
-                <i className="fa-solid fa-fw fa-times"></i>
-              </button>
+          {friend ? ( // Temporary solution for testing purposes
+            <h2>Test</h2>
+          ) : (
+            <h2>Add friends to start swiping!</h2>
+          )}
+          {modalState && (
+            <div className="modal">
+              <div className="modal__header">
+                <h2>Add friends</h2>
+                <button className="close no" onClick={() => closeModal()}>
+                  <i className="fa-solid fa-fw fa-times"></i>
+                </button>
+              </div>
+              <form className="modal__body" onSubmit={handleFormSubmit}>
+                <input
+                  type="text"
+                  placeholder="@user"
+                  onChange={(e) => setFriendsUsername(e.target.value)}
+                  required
+                />
+                <button className="wide">Add</button>
+              </form>
             </div>
-            <form className="modal__body" onSubmit={handleFormSubmit}>
-              <input
-                type="text"
-                placeholder="@user"
-                onChange={(e) => setFriendsUsername(e.target.value)}
-                required
-              />
-              <button className="wide">Add</button>
-            </form>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   );
