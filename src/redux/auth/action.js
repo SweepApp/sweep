@@ -63,3 +63,35 @@ export const signup = (username, email, password, avatar) => async (dispatch) =>
     console.log(error);
   }
 }
+
+export const update = (avatar, token) => async (dispatch) => {
+  try {
+    const response = await fetch("http://localhost:8080/api/v1/user/profile", {
+      method: "PUT",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+        'Authorization': 'Bearer ' + token
+      },
+      body: JSON.stringify({
+        avatar: avatar,
+      }),
+    });
+
+    const data = await response.json();
+
+    dispatch(
+      setAuth({
+        username: data.body["username"],
+        email: data.body["email"],
+        avatar: avatar,
+        isLoggedIn: true,
+        token: token,
+      })
+    );
+    
+    console.log(data)
+  } catch (error) {
+    console.log(error);
+  }
+}

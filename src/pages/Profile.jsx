@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { clearPersistedState } from "../redux";
 import { useEffect } from "react";
+import { update } from "../redux/auth/action";
 import Upperbar from "../components/Upperbar";
 import avatars from "../assets/data/avatars.json";
 
@@ -12,7 +13,6 @@ export default function Home() {
   let avatar = useSelector((state) => state.usersData.avatar);
   let matches = useSelector((state) => state.profilesData.matches);
   const [edit, setEdit] = useState(false);
-  const [newAvatar, setNewAvatar] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,8 +34,8 @@ export default function Home() {
   };
 
   const selectAvatar = (pic) => {
-    setNewAvatar(pic);
     setEdit(false);
+    dispatch(update(pic, token));
   };
 
   return (
