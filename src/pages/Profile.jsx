@@ -8,7 +8,7 @@ export default function Home() {
   let username = useSelector((state) => state.usersData.username);
   let token = useSelector((state) => state.usersData.token);
   let avatar = useSelector((state) => state.usersData.avatar);
-  let matchs = useSelector((state) => state.profilesData.matchs);
+  let matches = useSelector((state) => state.profilesData.matches);
 
   const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ export default function Home() {
               <h1>{username}</h1>
             </div>
             <div className="profile__card__infos__stats">
-              <span>{matchs} {matchs > 2 ? 'matchs' : 'match'}</span>
+              <span>{matches} {matches > 2 ? 'matches' : 'match'}</span>
             </div>
           </div>
         </div>
