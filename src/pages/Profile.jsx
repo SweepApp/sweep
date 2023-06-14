@@ -7,6 +7,7 @@ import Upperbar from "../components/Upperbar";
 export default function Home() {
   let username = useSelector((state) => state.usersData.username);
   let token = useSelector((state) => state.usersData.token);
+  let avatar = useSelector((state) => state.usersData.avatar);
 
   const navigate = useNavigate();
 
@@ -28,7 +29,7 @@ export default function Home() {
       <div className="Profile">
         <div className="profile__card">
           <div className="profile__card__avatar">
-            <img src={`https://github.com/identicons/${username}.png`} alt="avatar" />
+            <img src={avatar} alt="avatar" />
           </div>
           <div className="profile__card__infos">
             <div className="profile__card__infos__name">
