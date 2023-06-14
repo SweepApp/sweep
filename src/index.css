@@ -356,6 +356,10 @@ a:hover {
   height: 64px;
   border-radius: 100%;
 }
+.friend__buttons {
+  display: flex;
+  gap: 5px;
+}
 
 .details__poster img {
   position: absolute;

@@ -17,4 +17,8 @@
       border-radius: 100%;
     }
   }
+  &__buttons {
+    display: flex;
+    gap: 5px;
+  }
 }
