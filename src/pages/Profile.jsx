@@ -11,7 +11,7 @@ export default function Home() {
   let username = useSelector((state) => state.usersData.username);
   let token = useSelector((state) => state.usersData.token);
   let avatar = useSelector((state) => state.usersData.avatar);
-  let matches = useSelector((state) => state.profilesData.matches);
+  let matches = useSelector((state) => state.statsDetails.matches);
   const [edit, setEdit] = useState(false);
 
   const dispatch = useDispatch();
