@@ -15,10 +15,12 @@ export const login = (username, password) => async (dispatch) => {
     });
 
     const data = await response.json();
-
+    console.log(data.body["email"])
     dispatch(
       setAuth({
         username: username,
+        email: data.body["email"],
+        // avatar: data.body["avatar"],
         isLoggedIn: true,
         token: data.body["token"],
       })
