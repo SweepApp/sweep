@@ -9,6 +9,7 @@ export default function Home() {
   const [modalState, setModalState] = useState(false);
   const [friendsUsername, setFriendsUsername] = useState("");
   const [friendButton, setFriendButton] = useState(true);
+  let friend = 0; // Temp. variable for testing purposes
 
   useEffect(() => {
     if (!token) {
@@ -28,7 +29,7 @@ export default function Home() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    closeModal(); // Temporary solution for testing
+    closeModal(); // Temporary solution for testing purposes
   };
 
   return (
@@ -41,6 +42,14 @@ export default function Home() {
               Add friends
             </button>
           )}
+        </div>
+
+        <div className="duo__content">
+            {friend ? ( // Temporary solution for testing purposes
+              <h2>Test</h2>
+            ) : (
+              <h2>Add friends to start swiping!</h2>
+            )}
         </div>
 
         {modalState && (
