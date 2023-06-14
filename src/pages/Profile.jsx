@@ -51,14 +51,14 @@ export default function Home() {
           </div>
 
           {edit && (
-            <div className="profile__card__modale">
-              <div className="profile__card__modale__header">
+            <div className="profile__card__modal">
+              <div className="profile__card__modal__header">
                 <h2>Choose an avatar</h2>
                 <button className="close no" onClick={() => setEdit(false)}>
                   <i className="fa-solid fa-fw fa-times"></i>
                 </button>
               </div>
-              <div className="profile__card__modale__list">
+              <div className="profile__card__modal__list">
                 {avatars &&
                   avatars.map((pic, index) => (
                     <img
