@@ -25,8 +25,6 @@ export const login = (username, password) => async (dispatch) => {
         token: data.body["token"],
       })
     );
-
-    console.log(data)
   } catch (error) {
     console.log(error);
   }
