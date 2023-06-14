@@ -43,7 +43,7 @@ export default function Home() {
         </div>
 
         <div className="profile__history">
-          <h2>Historique</h2>
+          <h2>History</h2>
         </div>
 
         <div className="profile__disconnect">
