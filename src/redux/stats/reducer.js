@@ -9,7 +9,7 @@ export const statsSlice = createSlice({
   name: "statsDetails",
   initialState: statsInitialState,
   reducers: {
-    setProfile: (state, action) => {
+    setStats: (state, action) => {
       const { matches, history } = action.payload;
       state.matches = matches;
       state.history = history;
