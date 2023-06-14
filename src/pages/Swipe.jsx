@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import Friend from "../components/Friend";
 import Upperbar from "../components/Upperbar";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
   const [modalState, setModalState] = useState(false);
   const [friendsUsername, setFriendsUsername] = useState("");
   const [friendButton, setFriendButton] = useState(true);
-  let friend = 0; // Temp. variable for testing purposes
+  let friend = 1; // Temp. variable for testing purposes
 
   useEffect(() => {
     if (!token) {
@@ -46,7 +47,15 @@ export default function Home() {
 
         <div className="duo__content">
           {friend ? ( // Temporary solution for testing purposes
-            <h2>Test</h2>
+            <>
+              <h2>{friend > 1 ? 'Friends' : 'Friend'} list</h2>
+              <Friend
+                image="../images/avatar/1.jpg"
+                name="tester"
+                delete={() => console.log("delete")}
+                invite={() => console.log("invite")}
+              />
+            </>
           ) : (
             <h2>Add friends to start swiping!</h2>
           )}
