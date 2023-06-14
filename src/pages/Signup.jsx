@@ -2,19 +2,29 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signup } from "../redux/auth/action";
+import avatar1 from "../assets/images/avatar/1.jpg";
+import avatar2 from "../assets/images/avatar/2.jpg";
+import avatar3 from "../assets/images/avatar/3.jpg";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [avatar, setAvatar] = useState(null);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(signup(username, email, password));
-    navigate("/", { replace: true })
+    dispatch(signup(username, email, password, avatar));
+    navigate("/", { replace: true });
+  };
+
+  const avatars = [avatar1, avatar2, avatar3];
+
+  const selectAvatar = (avatar) => {
+    setAvatar(avatar);
   };
 
   return (
@@ -24,6 +34,20 @@ export default function Signup() {
           <h1>Create an account</h1>
           <div className="sign__container__form">
             <form onSubmit={handleFormSubmit}>
+              <div className="sign__container__form__avatar">
+                <label htmlFor="avatar">Choose an avatar</label>
+                <div className="sign__container__form__avatar__list">
+                  {avatars.map((pic, index) => (
+                    <img
+                      key={index}
+                      alt="avatar"
+                      src={pic}
+                      onClick={() => selectAvatar(pic)}
+                      className={pic === avatar ? "selected" : ""}
+                    />
+                  ))}
+                </div>
+              </div>
               <input
                 type="text"
                 placeholder="Username"
@@ -43,8 +67,8 @@ export default function Signup() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <button type="submit" className="sign">
-                Sign Up
+              <button className="sign" type="submit">
+                Sign up
               </button>
             </form>
           </div>

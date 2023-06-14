@@ -15,5 +15,32 @@
         text-align: center;
       }
     }
+    &__form {
+      &__avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 1rem;
+        &__list {
+          display: flex;
+          gap: 10px;
+          img {
+            cursor: pointer;
+            width: 78px;
+            height: 78px;
+            border-radius: 100%;
+            margin: 0 auto;
+            display: block;
+            border: 3px solid transparent;
+            &.selected {
+              border: 3px solid $active-color;
+            }
+          }
+        }
+        
+      }
+    }
   }
 }

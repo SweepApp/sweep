@@ -20,7 +20,7 @@ export const login = (username, password) => async (dispatch) => {
       setAuth({
         username: username,
         email: data.body["email"],
-        // avatar: data.body["avatar"],
+        avatar: data.body["avatar"],
         isLoggedIn: true,
         token: data.body["token"],
       })
@@ -30,7 +30,7 @@ export const login = (username, password) => async (dispatch) => {
   }
 };
 
-export const signup = (username, email, password) => async (dispatch) => {
+export const signup = (username, email, password, avatar) => async (dispatch) => {
   try {
     const response = await fetch("http://localhost:8080/api/v1/user/signup", {
       method: "POST",
@@ -42,6 +42,7 @@ export const signup = (username, email, password) => async (dispatch) => {
         username: username,
         email: email,
         password: password,
+        avatar: avatar,
       }),
     });
 
@@ -49,7 +50,9 @@ export const signup = (username, email, password) => async (dispatch) => {
 
     dispatch(
       setAuth({
+        username: username,
         email: email,
+        avatar: avatar,
         isLoggedIn: true,
         token: data.body["token"],
       })
