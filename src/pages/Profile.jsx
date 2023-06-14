@@ -89,7 +89,7 @@ export default function Home() {
           <h2>History</h2>
         </div>
 
-        <div className="profile__disconnect">
+        <div className="profile__disconnect float__bottom">
           <button className="wide" onClick={handleLogout}>
             Log out
           </button>

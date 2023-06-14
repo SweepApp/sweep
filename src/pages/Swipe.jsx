@@ -13,11 +13,17 @@ export default function Home() {
     }
   }, [token, navigate]);
 
+
+
   return (
     <>
       <Upperbar title="Duo" />
-      <div className="Profile">
-
+      <div className="Duo">
+      <div className="float__bottom">
+          <button className="wide">
+            Add friends
+          </button>
+        </div>
       </div>
     </>
   )

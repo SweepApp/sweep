@@ -205,13 +205,6 @@ nav li.active {
   font-size: 16px;
   color: #ffffff;
 }
-.profile__disconnect {
-  position: absolute;
-  bottom: 60px;
-  left: 0;
-  width: 90%;
-  margin: 0 5%;
-}
 
 button {
   font-size: 18px;
@@ -301,6 +294,14 @@ a:hover {
   color: #b3b3b3;
   text-decoration: none;
   transition: all 0.3s;
+}
+
+.float__bottom {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 90%;
+  margin: 0 5%;
 }
 
 .details__poster img {
