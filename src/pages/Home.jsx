@@ -37,7 +37,7 @@ export default function Home() {
       <div className="Home">
         <h1>Hello, {username} 👋</h1>
         <div className="Home__cards">
-          <Card api={api} />
+          <Card api={api} style="mini" />
         </div>
       </div>
     </>

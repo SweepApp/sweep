@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setMovieDetails } from "../redux/movieDetails/reducer";
 import { useNavigate } from "react-router";
 
-export default function Card({ api }) {
+export default function Card({ api, style }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -25,10 +25,12 @@ export default function Card({ api }) {
     navigate("/details");
   }
 
+  let card = `card__${style}`;
+
   return api !== undefined ? (
     api.map((movie, index) => (
-      <div className="card" key={index} onClick={() => openDetails(movie)}>
-        <div className="card__poster">
+      <div className={card} key={index} onClick={() => openDetails(movie)}>
+        <div className={`${card}__poster`}>
           <img
             src={
               "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
@@ -37,9 +39,9 @@ export default function Card({ api }) {
             alt={movie.name}
           />
         </div>
-        <div className="card__infos">
+        <div className={`${card}__infos`}>
           <ul>
-            <li className="card__infos title">{movie.title}</li>
+            <li className={`${card}__infos title`}>{movie.title}</li>
             <li>
               {movie.tagline}
             </li>
@@ -51,7 +53,7 @@ export default function Card({ api }) {
             </li>
           </ul>
         </div>
-        <div className="card__bg">
+        <div className={`${card}__bg`}>
           <img
             src={
               "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces" +
@@ -69,4 +71,5 @@ export default function Card({ api }) {
 
 Card.propTypes = {
   api: propTypes.array,
+  style: propTypes.string,
 };
