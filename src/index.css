@@ -460,22 +460,5 @@ a:hover {
 .duo__content {
   position: relative;
 }
-.duo__content.modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8470588235);
-  border: 1px solid rgba(87, 87, 87, 0.9647058824);
-  border-radius: 10px;
-  padding: 8px;
-  box-sizing: border-box;
-}
-.duo__content.modal__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 8px 8px;
-}
 
 /*# sourceMappingURL=index.css.map */
