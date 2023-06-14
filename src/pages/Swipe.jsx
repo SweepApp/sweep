@@ -1,16 +1,20 @@
 import { useNavigate } from "react-router";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Friend from "../components/Friend";
 import Upperbar from "../components/Upperbar";
+import { addFriend } from "../redux/friend/action";
 
 export default function Home() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const token = useSelector((state) => state.usersData.token);
+  // const friendSelector = useSelector((state) => state.friendsData.friend);
   const [modalState, setModalState] = useState(false);
   const [friendsUsername, setFriendsUsername] = useState("");
   const [friendButton, setFriendButton] = useState(true);
-  let friend = 1; // Temp. variable for testing purposes
+
+  let friend = 1;
 
   useEffect(() => {
     if (!token) {
@@ -30,6 +34,7 @@ export default function Home() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    dispatch(addFriend(friendsUsername, token))
     closeModal(); // Temporary solution for testing purposes
   };
 

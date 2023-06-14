@@ -15,7 +15,7 @@ export const login = (username, password) => async (dispatch) => {
     });
 
     const data = await response.json();
-    console.log(data.body["email"])
+
     dispatch(
       setAuth({
         username: username,
