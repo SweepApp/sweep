@@ -10,7 +10,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [avatar, setAvatar] = useState(null);
+  const [avatar, setAvatar] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,10 +22,6 @@ export default function Signup() {
   };
 
   const avatars = [avatar1, avatar2, avatar3];
-
-  const selectAvatar = (avatar) => {
-    setAvatar(avatar);
-  };
 
   return (
     <div className="login">
@@ -42,7 +38,7 @@ export default function Signup() {
                       key={index}
                       alt="avatar"
                       src={pic}
-                      onClick={() => selectAvatar(pic)}
+                      onClick={() => setAvatar(pic)}
                       className={pic === avatar ? "selected" : ""}
                     />
                   ))}
