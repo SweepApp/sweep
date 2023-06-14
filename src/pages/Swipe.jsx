@@ -28,6 +28,7 @@ export default function Home() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    closeModal(); // Temporary solution for testing
   };
 
   return (
