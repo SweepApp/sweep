@@ -1,11 +1,14 @@
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Upperbar from "../components/Upperbar";
 
 export default function Home() {
   const navigate = useNavigate();
   const token = useSelector((state) => state.usersData.token);
+  const [modalState, setModalState] = useState(false);
+  const [friendsUsername, setFriendsUsername] = useState("");
+  const [friendButton, setFriendButton] = useState(true);
 
   useEffect(() => {
     if (!token) {
@@ -13,18 +16,52 @@ export default function Home() {
     }
   }, [token, navigate]);
 
+  const openModal = () => {
+    setModalState(true);
+    setFriendButton(false);
+  };
 
+  const closeModal = () => {
+    setModalState(false);
+    setFriendButton(true);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
       <Upperbar title="Duo" />
-      <div className="Duo">
-      <div className="float__bottom">
-          <button className="wide">
-            Add friends
-          </button>
+      <div className="duo">
+        <div className="float__bottom">
+          {friendButton && (
+            <button className="wide" onClick={() => openModal()}>
+              Add friends
+            </button>
+          )}
         </div>
+
+        {modalState && (
+          <div className="modal">
+            <div className="modal__header">
+              <h2>Add friends</h2>
+              <button className="close no" onClick={() => closeModal()}>
+                <i className="fa-solid fa-fw fa-times"></i>
+              </button>
+            </div>
+            <form className="modal__body" onSubmit={handleFormSubmit}>
+              <input
+                type="text"
+                placeholder="@user"
+                onChange={(e) => setFriendsUsername(e.target.value)}
+                required
+              />
+              <button className="wide">Add</button>
+            </form>
+          </div>
+        )}
       </div>
     </>
-  )
+  );
 }
