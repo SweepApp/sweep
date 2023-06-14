@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import { movieDetailsSlice } from "./movieDetails/reducer";
 import { userSlice } from './auth/reducer';
-import { profileSlice } from './profile/reducer';
+import { statsSlice } from './stats/reducer';
 import thunk from 'redux-thunk';
 import storage from 'redux-persist/lib/storage';
 
@@ -15,7 +15,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   movieDetails: movieDetailsSlice.reducer,
   usersData: userSlice.reducer,
-  profilesData: profileSlice.reducer,
+  statsDetails: statsSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

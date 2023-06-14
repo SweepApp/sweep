@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const profileInitialState = {
+export const statsInitialState = {
   matches: 0,
   history: [],
 };
 
-export const profileSlice = createSlice({
-  name: "profilesData",
-  initialState: profileInitialState,
+export const statsSlice = createSlice({
+  name: "statsDetails",
+  initialState: statsInitialState,
   reducers: {
     setProfile: (state, action) => {
       const { matches, history } = action.payload;
@@ -17,5 +17,5 @@ export const profileSlice = createSlice({
   }
 });
 
-export const { setProfile } = profileSlice.actions;
-export default profileSlice.reducer;
+export const { setProfile } = statsSlice.actions;
+export default statsSlice.reducer;
