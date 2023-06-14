@@ -4,6 +4,7 @@ import { useState } from "react";
 import { clearPersistedState } from "../redux";
 import { useEffect } from "react";
 import Upperbar from "../components/Upperbar";
+import avatars from "../assets/data/avatars.json";
 
 export default function Home() {
   let username = useSelector((state) => state.usersData.username);
@@ -11,6 +12,7 @@ export default function Home() {
   let avatar = useSelector((state) => state.usersData.avatar);
   let matches = useSelector((state) => state.profilesData.matches);
   const [edit, setEdit] = useState(false);
+  const [newAvatar, setNewAvatar] = useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,7 +31,12 @@ export default function Home() {
 
   const editAvatar = () => {
     setEdit(true);
-  }
+  };
+
+  const selectAvatar = (pic) => {
+    setNewAvatar(pic);
+    setEdit(false);
+  };
 
   return (
     <>
@@ -38,12 +45,31 @@ export default function Home() {
         <div className="profile__card">
           <div className="profile__card__avatar">
             <img src={avatar} alt="avatar" />
-            <button className="edit" onClick={() => editAvatar()}><i className="fa-solid fa-fw fa-pen"></i></button>
+            <button className="edit" onClick={() => editAvatar()}>
+              <i className="fa-solid fa-fw fa-pen"></i>
+            </button>
           </div>
 
           {edit && (
             <div className="profile__card__modale">
-              
+              <div className="profile__card__modale__header">
+                <h2>Choose an avatar</h2>
+                <button className="close no" onClick={() => setEdit(false)}>
+                  <i className="fa-solid fa-fw fa-times"></i>
+                </button>
+              </div>
+              <div className="profile__card__modale__list">
+                {avatars &&
+                  avatars.map((pic, index) => (
+                    <img
+                      key={index}
+                      alt={pic.name}
+                      src={pic.url}
+                      onClick={() => selectAvatar(pic.url)}
+                      className={pic.url === avatar ? "selected" : ""}
+                    />
+                  ))}
+              </div>
             </div>
           )}
 
@@ -52,7 +78,9 @@ export default function Home() {
               <h1>{username}</h1>
             </div>
             <div className="profile__card__infos__stats">
-              <span>{matches} {matches > 2 ? 'matches' : 'match'}</span>
+              <span>
+                {matches} {matches > 2 ? "matches" : "match"}
+              </span>
             </div>
           </div>
         </div>
@@ -62,7 +90,9 @@ export default function Home() {
         </div>
 
         <div className="profile__disconnect">
-          <button className="wide" onClick={handleLogout}>Log out</button>
+          <button className="wide" onClick={handleLogout}>
+            Log out
+          </button>
         </div>
       </div>
     </>

@@ -50,4 +50,8 @@ button {
       transition: all 0.3s;
     }
   }
+  &.no {
+    border: none;
+    background-color: transparent;
+  }
 }
