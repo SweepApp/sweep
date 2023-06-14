@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signup } from "../redux/auth/action";
-import avatar1 from "../assets/images/avatar/1.jpg";
-import avatar2 from "../assets/images/avatar/2.jpg";
-import avatar3 from "../assets/images/avatar/3.jpg";
+import avatars from "../assets/data/avatars.json"
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -21,8 +19,6 @@ export default function Signup() {
     navigate("/", { replace: true });
   };
 
-  const avatars = [avatar1, avatar2, avatar3];
-
   return (
     <div className="login">
       <div className="sign">
@@ -33,13 +29,13 @@ export default function Signup() {
               <div className="sign__container__form__avatar">
                 <label htmlFor="avatar">Choose an avatar</label>
                 <div className="sign__container__form__avatar__list">
-                  {avatars.map((pic, index) => (
+                  {avatars && avatars.map((pic, index) => (
                     <img
                       key={index}
-                      alt="avatar"
-                      src={pic}
-                      onClick={() => setAvatar(pic)}
-                      className={pic === avatar ? "selected" : ""}
+                      alt={pic.name}
+                      src={pic.url}
+                      onClick={() => setAvatar(pic.url)}
+                      className={pic.url === avatar ? "selected" : ""}
                     />
                   ))}
                 </div>
