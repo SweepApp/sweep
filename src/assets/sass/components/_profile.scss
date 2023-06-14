@@ -8,10 +8,18 @@
     padding: 8px;
     &__avatar {
       height: 96px;
+      position: relative;
       img {
         width: 96px;
         height: 96px;
         border-radius: 100%;
+      }
+      button {
+        &.edit {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
       }
     }
     &__infos {

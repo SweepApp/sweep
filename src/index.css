@@ -140,11 +140,17 @@ nav li.active {
 }
 .profile__card__avatar {
   height: 96px;
+  position: relative;
 }
 .profile__card__avatar img {
   width: 96px;
   height: 96px;
   border-radius: 100%;
+}
+.profile__card__avatar button.edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .profile__card__infos__name {
   margin-left: 16px;
@@ -204,6 +210,22 @@ button.wide {
 }
 button.wide:hover {
   background-color: #1a1a1a;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+button.edit {
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 100%;
+  padding: 5px;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.8470588235);
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+button.edit:hover {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(87, 87, 87, 0.9647058824);
   color: #ffffff;
   transition: all 0.3s;
 }

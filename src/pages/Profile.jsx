@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { clearPersistedState } from "../redux";
 import { useEffect } from "react";
 import Upperbar from "../components/Upperbar";
@@ -9,7 +10,9 @@ export default function Home() {
   let token = useSelector((state) => state.usersData.token);
   let avatar = useSelector((state) => state.usersData.avatar);
   let matches = useSelector((state) => state.profilesData.matches);
+  const [edit, setEdit] = useState(false);
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,6 +27,10 @@ export default function Home() {
     clearPersistedState();
   };
 
+  const editAvatar = () => {
+    setEdit(true);
+  }
+
   return (
     <>
       <Upperbar title={`@${username}`} />
@@ -31,7 +38,15 @@ export default function Home() {
         <div className="profile__card">
           <div className="profile__card__avatar">
             <img src={avatar} alt="avatar" />
+            <button className="edit" onClick={() => editAvatar()}><i className="fa-solid fa-fw fa-pen"></i></button>
           </div>
+
+          {edit && (
+            <div className="profile__card__modale">
+              
+            </div>
+          )}
+
           <div className="profile__card__infos">
             <div className="profile__card__infos__name">
               <h1>{username}</h1>
