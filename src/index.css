@@ -322,6 +322,27 @@ a:hover {
   margin: 0 8px 8px;
 }
 
+.friend {
+  border: 1px solid rgba(87, 87, 87, 0.9647058824);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.friend__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.friend__content__image img {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}
+
 .details__poster img {
   position: absolute;
   z-index: -1;

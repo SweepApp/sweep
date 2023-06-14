@@ -4,10 +4,10 @@ export default function Friend(props) {
   return (
     <div className="friend">
       <div className="friend__content">
-        <div className="friend__image">
+        <div className="friend__content__image">
           <img src={props.image} alt={props.name} />
         </div>
-        <div className="friend__info">
+        <div className="friend__content__info">
           <h3>{props.name}</h3>
         </div>
       </div>
