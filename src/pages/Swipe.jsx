@@ -21,19 +21,8 @@ export default function Home() {
     }
   }, [token, navigate]);
 
-  const openModal = () => {
-    setModalState(true);
-    setFriendButton(false);
-  };
-
-  const closeModal = () => {
-    setModalState(false);
-    setFriendButton(true);
-  };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    closeModal(); // Temporary solution for testing purposes
   };
 
   return (
@@ -42,8 +31,8 @@ export default function Home() {
       <div className="duo">
         <div className="float__bottom">
           {friendButton && (
-            <button className="wide" onClick={() => openModal()}>
-              Add friends
+            <button className="wide">
+              Start a party
             </button>
           )}
         </div>
@@ -54,7 +43,7 @@ export default function Home() {
             <div className="modal">
               <div className="modal__header">
                 <h2>Add friends</h2>
-                <button className="close no" onClick={() => closeModal()}>
+                <button className="close no">
                   <i className="fa-solid fa-fw fa-times"></i>
                 </button>
               </div>
