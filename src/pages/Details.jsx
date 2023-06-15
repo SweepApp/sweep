@@ -30,12 +30,14 @@ export default function Details() {
     <>
       <Upperbar title={movieDetails.title} />
       <div className="details">
-        <div className="details__poster">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
-            alt="poster"
-          />
-        </div>
+        {movieDetails.backdrop_path && (
+          <div className="details__poster">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
+              alt="poster"
+            />
+          </div>
+        )}
         <div className="details__infos">
           <div className="details__infos__header">
             <div>
@@ -55,94 +57,106 @@ export default function Details() {
                   ? "N/A"
                   : formatTime(movieDetails.runtime)}
               </span>
-              <span>
-                {movieDetails.vote_average >= 5 ? (
-                  <i className="fa-solid fa-fw fa-face-smile"></i>
-                ) : (
-                  <i className="fa-solid fa-fw fa-face-sad-tear"></i>
-                )}
-                {sliceVote(movieDetails.vote_average)}/10
-              </span>
+              {movieDetails.vote_average && (
+                <span>
+                  {movieDetails.vote_average >= 5 ? (
+                    <i className="fa-solid fa-fw fa-face-smile"></i>
+                  ) : (
+                    <i className="fa-solid fa-fw fa-face-sad-tear"></i>
+                  )}
+                  {sliceVote(movieDetails.vote_average)}/10
+                </span>
+              )}
             </div>
             <div className="details__infos__overview">
               <h3>Overview</h3>
               <p>{movieDetails.overview ? movieDetails.overview : "N/A"}</p>
             </div>
             {movieDetails.genres && (
-            <div className="details__infos__genres">
-              <h3>Genres</h3>
-              <ul>
-                {movieDetails.genres.slice(0, 3).map((genre) => (
-                  <li key={genre.id}>{genre}</li>
-                ))}
-              </ul>
-            </div>
+              <div className="details__infos__genres">
+                <h3>Genres</h3>
+                <ul>
+                  {movieDetails.genres.slice(0, 3).map((genre, index) => (
+                    <li key={index}>{genre}</li>
+                  ))}
+                </ul>
+              </div>
             )}
-            <div className="details__infos__credits">
-              <h3>Cast</h3>
-              <table>
-                <tbody>
-                  <tr>
-                    <td>
-                      {movieDetails.credits.slice(0, 5).map((actor, index) => (
-                        <span key={index}>{actor}</span>
-                      ))}
-                    </td>
-                    <td>
-                      {movieDetails.credits.slice(5, 10).map((actor, index) => (
-                        <span key={index}>{actor}</span>
-                      ))}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="details__infos__details">
-              <h3>Details</h3>
-              <div className="details__infos__details__box">
+            {movieDetails.credits && (
+              <div className="details__infos__credits">
+                <h3>Cast</h3>
                 <table>
                   <tbody>
                     <tr>
-                      <td className="title">Production</td>
                       <td>
-                        {movieDetails.production_companies ? (
-                          movieDetails.production_companies.map((company) => (
-                            <span key={company.id}>{company}</span>
-                          ))
-                        ) : (
-                          <span>N/A</span>
-                        )}
+                        {movieDetails.credits
+                          .slice(0, 5)
+                          .map((actor, index) => (
+                            <span key={index}>{actor}</span>
+                          ))}
                       </td>
-                    </tr>
-                    <tr>
-                      <td className="title">Budget</td>
-                      {movieDetails.budget ? (
-                        <td>{movieDetails.budget}$</td>
-                      ) : (
-                        "N/A"
-                      )}
-                    </tr>
-                    <tr>
-                      <td className="title">Revenue</td>
-                      {movieDetails.revenue ? (
-                        <td>{movieDetails.revenue}$</td>
-                      ) : (
-                        "N/A"
-                      )}
+                      <td>
+                        {movieDetails.credits
+                          .slice(5, 10)
+                          .map((actor, index) => (
+                            <span key={index}>{actor}</span>
+                          ))}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div></div>
-            </div>
+            )}
+            {movieDetails.credits && (
+              <div className="details__infos__details">
+                <h3>Details</h3>
+                <div className="details__infos__details__box">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td className="title">Production</td>
+                        <td>
+                          {movieDetails.production_companies ? (
+                            movieDetails.production_companies.map((company, index) => (
+                              <span key={index}>{company}</span>
+                            ))
+                          ) : (
+                            <span>N/A</span>
+                          )}
+                        </td>
+                      </tr>
+                      {movieDetails.budget > 0 ? (
+                        <tr>
+                          <td className="title">Budget</td>
+                          <td>{movieDetails.budget}$</td>
+                        </tr>
+                      ) : (
+                        ""
+                      )}
+                      {movieDetails.revenue > 0 ? (
+                        <tr>
+                          <td className="title">Revenue</td>
+                          <td>{movieDetails.revenue}$</td>
+                        </tr>
+                      ) : (
+                        ""
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+                <div></div>
+              </div>
+            )}
           </div>
         </div>
-        <div className="details__bg">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
-            alt="bg"
-          />
-        </div>
+        {movieDetails.poster_path && (
+          <div className="details__bg">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+              alt="bg"
+            />
+          </div>
+        )}
       </div>
     </>
   );
