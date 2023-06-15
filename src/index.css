@@ -31,6 +31,12 @@ body {
   font-size: 18px;
   text-align: center;
 }
+#upperbar button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px 0 0 20px;
+}
 
 nav {
   background-color: rgba(0, 0, 0, 0.8470588235);
