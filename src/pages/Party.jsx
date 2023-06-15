@@ -21,10 +21,10 @@ export default function Home() {
 
   return (
     <>
-      <Upperbar title="Duo" />
-      <div className="duo">
-        <div className="duo__content">
-          <div className="duo__content__header">
+      <Upperbar title="Party" />
+      <div className="party">
+        <div className="party__content">
+          <div className="party__content__header">
             <h2>Party</h2>
           </div>
           <form className="modal__body" onSubmit={handleFormSubmit}>
