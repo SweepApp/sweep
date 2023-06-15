@@ -11,6 +11,11 @@ export default function Card({ api, style }) {
     return date.slice(0, 4);
   }
 
+  function sliceVote(vote) {
+    let voteString = vote.toString();
+    return voteString.slice(0, 3);
+  }
+
   function formatTime(time) {
     let hours = Math.floor(time / 60);
     let minutes = time % 60;
@@ -43,7 +48,12 @@ export default function Card({ api, style }) {
           <ul>
             <li className={`${card}__infos title`}>{movie.title}</li>
             <li>
-              {movie.tagline}
+              {movie.vote_average >= 5 ? (
+                <i className="fa-solid fa-fw fa-face-smile"></i>
+              ) : (
+                <i className="fa-solid fa-fw fa-face-sad-tear"></i>
+              )}
+              {sliceVote(movie.vote_average)}/10
             </li>
             <li>
               <i className="fa-solid fa-fw fa-calendar-days"></i>{sliceDate(movie.release_date)}
