@@ -59,7 +59,7 @@ export default function Card({ api, style }) {
               <i className="fa-solid fa-fw fa-calendar-days"></i>{sliceDate(movie.release_date)}
             </li>
             <li>
-              <i className="fa-regular fa-fw fa-clock"></i>{formatTime(movie.runtime)} 
+              <i className="fa-regular fa-fw fa-clock"></i>{movie.runtime === 0 ? "N/A" : formatTime(movie.runtime)} 
             </li>
           </ul>
         </div>
