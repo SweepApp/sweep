@@ -5,8 +5,7 @@ export default function Details() {
   const movieDetails = useSelector((state) => state.movieDetails);
 
   if (movieDetails.title === null) {
-    window.location.href = "/";
-    console.log("test");
+    window.location.href = "/explore";
   }
 
   function sliceVote(vote) {
