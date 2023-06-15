@@ -23,6 +23,7 @@ export const login = (username, password) => async (dispatch) => {
         avatar: data.body["avatar"],
         isLoggedIn: true,
         token: data.body["token"],
+        friends: data.body["friends"],
       })
     );
   } catch (error) {
@@ -87,6 +88,41 @@ export const update = (avatar, token) => async (dispatch) => {
         avatar: avatar,
         isLoggedIn: true,
         token: token,
+        friends: data.body["friends"],
+      })
+    );
+    
+    console.log(data)
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const friend = (token, friends) => async (dispatch) => {
+  try {
+    const response = await fetch("http://localhost:8080/api/v1/user/profile", {
+      method: "PUT",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+        'Authorization': 'Bearer ' + token
+      },
+      body: JSON.stringify({
+        friends: friends
+      }),
+    });
+
+    const data = await response.json();
+    console.log(friends)
+
+    dispatch(
+      setAuth({
+        username: data.body["username"],
+        email: data.body["email"],
+        avatar: data.body["avatar"],
+        isLoggedIn: true,
+        token: token,
+        friends: friends
       })
     );
     

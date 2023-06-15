@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import Friend from "../components/Friend";
+import FriendCard from "../components/Friend";
 import Upperbar from "../components/Upperbar";
-import { addFriend } from "../redux/friend/action";
+import { friend } from "../redux/auth/action";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function Home() {
   const [friendsUsername, setFriendsUsername] = useState("");
   const [friendButton, setFriendButton] = useState(true);
 
-  let friend = 1;
+  let friends = 1;
 
   useEffect(() => {
     if (!token) {
@@ -34,7 +34,7 @@ export default function Home() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(addFriend(friendsUsername, token))
+    dispatch(friend(token, friendsUsername))
     closeModal(); // Temporary solution for testing purposes
   };
 
@@ -53,8 +53,8 @@ export default function Home() {
         <div className="duo__content">
           {friend ? ( // Temporary solution for testing purposes
             <>
-              <h2>{friend > 1 ? 'Friends' : 'Friend'} list</h2>
-              <Friend
+              <h2>{friends > 1 ? 'Friends' : 'Friend'} list</h2>
+              <FriendCard
                 image="../images/avatar/1.jpg"
                 name="tester"
                 delete={() => console.log("delete")}
