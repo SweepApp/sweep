@@ -11,8 +11,8 @@ export default function Navbar() {
   return token && (
     <nav>
       <ul>
-        <li className={splitLocation[1] === "swipe" ? "active" : ""}>
-          <a href="/swipe">
+        <li className={splitLocation[1] === "party" ? "active" : ""}>
+          <a href="/party">
             <i className="fa-solid fa-children fa-fw"></i>
           </a>
         </li>
