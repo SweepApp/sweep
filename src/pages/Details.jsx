@@ -79,13 +79,12 @@ export default function Details() {
                 <tbody>
                   <tr>
                     <td>
-                      {movieDetails.credits.slice(0, 4).map((actor, index) => (
+                      {movieDetails.credits.slice(0, 5).map((actor, index) => (
                         <span key={index}>{actor}</span>
                       ))}
                     </td>
-                    <hr />
                     <td>
-                      {movieDetails.credits.slice(4, 8).map((actor, index) => (
+                      {movieDetails.credits.slice(5, 10).map((actor, index) => (
                         <span key={index}>{actor}</span>
                       ))}
                     </td>

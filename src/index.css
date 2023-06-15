@@ -401,22 +401,20 @@ a:hover {
   border-radius: 5px;
   padding: 0.5rem;
   font-size: 0.9rem;
-  margin: 0 auto;
+  width: 100%;
 }
 .details__infos__credits table tr {
-  padding: 0;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  padding: 0;
 }
 .details__infos__credits table tr td {
   display: flex;
   flex-direction: column;
   color: #e6e6e6;
-}
-.details__infos__credits table hr {
-  border: none;
-  border-left: 1px solid rgba(87, 87, 87, 0.9647058824);
-  margin: 0 0.5rem;
 }
 .details__infos__details {
   margin-bottom: 30px;
