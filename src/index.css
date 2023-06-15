@@ -285,19 +285,21 @@ form {
   justify-content: center;
 }
 form input {
-  border: 0;
-  border-bottom: 1px solid rgba(87, 87, 87, 0.9647058824);
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
   width: 95%;
   font-size: 1rem;
   background-color: rgba(0, 0, 0, 0.8470588235);
   color: #ffffff;
   transition: all 0.3s;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 form input:focus {
   outline: none;
   border-bottom: 1px solid rgba(215, 215, 215, 0.9647058824);
+}
+form input.login {
+  border: 0;
+  border-bottom: 1px solid rgba(87, 87, 87, 0.9647058824);
 }
 
 a {

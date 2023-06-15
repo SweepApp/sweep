@@ -24,12 +24,14 @@ export default function Login() {
           <div className="sign__container__form">
             <form onSubmit={handleFormSubmit}>
               <input
+                className="login"
                 type="text"
                 placeholder="Username"
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
               <input
+                className="login"
                 type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}

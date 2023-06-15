@@ -41,19 +41,22 @@ export default function Signup() {
                 </div>
               </div>
               <input
+                className="login"
                 type="text"
                 placeholder="Username"
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
               <input
-                type="text"
+                className="login"
+                type="email"
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <input type="password" placeholder="Password" required />
+              <input className="login" type="password" placeholder="Password" required />
               <input
+                className="login"
                 type="password"
                 placeholder="Confirm password"
                 onChange={(e) => setPassword(e.target.value)}
