@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../redux/auth/action";
 import Upperbar from "../components/Upperbar";
 
@@ -46,8 +46,8 @@ export default function Login() {
             </form>
           </div>
           <div className="sign__container__links">
-            <a href="#">Forgot Password?</a>
-            <a href="/signup">Create Account</a>
+            <Link to="#">Forgot Password?</Link>
+            <Link to="/signup">Create Account</Link>
           </div>
         </div>
       </div>
