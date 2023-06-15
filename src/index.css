@@ -473,4 +473,20 @@ a:hover {
   border: 3px solid #41b4e9;
 }
 
+.party__content__body form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.party__content__body input {
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  margin-bottom: 0;
+}
+.party__content__body button {
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem;
+  width: 20%;
+}
+
 /*# sourceMappingURL=index.css.map */
