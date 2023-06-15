@@ -18,7 +18,7 @@ export default function Navbar() {
         </li>
         <li className={splitLocation[1] === "" ? "active" : ""}>
           <a href="/">
-            <i className="fa-solid fa-house fa-fw"></i>
+            <i className="fa-solid fa-compass fa-fw"></i>
           </a>
         </li>
         <li className={splitLocation[1] === "profile" ? "active" : ""}>
