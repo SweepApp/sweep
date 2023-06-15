@@ -28,7 +28,7 @@ export default function Details() {
       <div className="details">
         <div className="details__poster">
           <img
-            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movieDetails.backdrop_path}`}
             alt="poster"
           />
         </div>
@@ -105,6 +105,12 @@ export default function Details() {
               <div></div>
             </div>
           </div>
+        </div>
+        <div className="details__bg">
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+            alt="bg"
+          />
         </div>
       </div>
     </>

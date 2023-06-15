@@ -1,5 +1,12 @@
 .details {
   &__poster img {
+    width: 100%;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  &__bg img {
     position: absolute;
     z-index: -1;
     top: 0;
