@@ -14,7 +14,6 @@ const movieDetailsInitialState = {
   credits: [],
   revenue: null,
   budget: null,
-  keywords: [],
   recommendations: [],
 };
 
@@ -23,7 +22,7 @@ export const movieDetailsSlice = createSlice({
   initialState: movieDetailsInitialState,
   reducers: {
     setMovieDetails: (state, action) => {
-      const { title, tagline, release_date, runtime, poster_path, backdrop_path, overview, vote_average, genres, production_companies, credits, revenue, budget, keywords, recommendations } = action.payload;
+      const { title, tagline, release_date, runtime, poster_path, backdrop_path, overview, vote_average, genres, production_companies, credits, revenue, budget, recommendations } = action.payload;
       state.title = title;
       state.tagline = tagline;
       state.release_date = release_date;
@@ -37,7 +36,6 @@ export const movieDetailsSlice = createSlice({
       state.credits = credits.split('-');
       state.revenue = revenue;
       state.budget = budget;
-      state.keywords = keywords.split('-');
       state.recommendations = recommendations.split('-');
     },
   },
