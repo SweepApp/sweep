@@ -33,10 +33,10 @@ export default function Home() {
 
   return (
     <>
-      <Upperbar id="top" title="Home" />
-      <div className="Home">
+      <Upperbar id="top" title="Explore" />
+      <div className="explore">
         <h1>Hello, {username} 👋</h1>
-        <div className="Home__cards">
+        <div className="explore_cards">
           <Card api={api} style="mini" />
         </div>
       </div>

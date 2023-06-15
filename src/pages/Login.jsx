@@ -13,7 +13,7 @@ export default function Login() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     await dispatch(login(username, password));
-    navigate("/", { replace: true })
+    navigate("/explore", { replace: true })
   };
 
   return (

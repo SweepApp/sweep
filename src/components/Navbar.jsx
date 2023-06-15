@@ -16,8 +16,8 @@ export default function Navbar() {
             <i className="fa-solid fa-children fa-fw"></i>
           </a>
         </li>
-        <li className={splitLocation[1] === "" ? "active" : ""}>
-          <a href="/">
+        <li className={splitLocation[1] === "explore" ? "active" : ""}>
+          <a href="/explore">
             <i className="fa-solid fa-compass fa-fw"></i>
           </a>
         </li>

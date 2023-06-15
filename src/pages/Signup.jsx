@@ -16,7 +16,7 @@ export default function Signup() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     dispatch(signup(username, email, password, avatar));
-    navigate("/", { replace: true });
+    navigate("/explore", { replace: true });
   };
 
   return (
