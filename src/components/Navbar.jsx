@@ -1,7 +1,9 @@
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/");
@@ -12,9 +14,9 @@ export default function Navbar() {
     <nav>
       <ul>
         <li className={splitLocation[1] === "party" ? "active" : ""}>
-          <a href="/party">
+          <Link to="/party">
             <i className="fa-solid fa-children fa-fw"></i>
-          </a>
+          </Link>
         </li>
         <li
           className={
@@ -23,14 +25,14 @@ export default function Navbar() {
               : ""
           }
         >
-          <a href="/">
+          <Link to="/">
             <i className="fa-solid fa-compass fa-fw"></i>
-          </a>
+          </Link>
         </li>
         <li className={splitLocation[1] === "profile" ? "active" : ""}>
-          <a href="/profile">
+          <Link to="/profile">
             <i className="fa-solid fa-user fa-fw"></i>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
@@ -39,13 +41,13 @@ export default function Navbar() {
       <nav className="log">
         <button
           className="sign"
-          onClick={() => (window.location.href = "/login")}
+          onClick={() => (navigate("/login"))}
         >
           Log in
         </button>
         <button
           className="sign"
-          onClick={() => (window.location.href = "/signup")}
+          onClick={() => (navigate("/signup"))}
         >
           Sign up
         </button>
