@@ -377,6 +377,9 @@ a:hover {
   display: flex;
   gap: 10px;
 }
+.details__infos__header i {
+  margin-right: 5px;
+}
 .details__infos__overview p {
   font-size: 0.9rem;
   font-weight: 400;
