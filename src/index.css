@@ -292,14 +292,22 @@ form input {
   transition: all 0.3s;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
+  border: 1px solid rgba(87, 87, 87, 0.9647058824);
+  border-radius: 5px;
 }
 form input:focus {
   outline: none;
-  border-bottom: 1px solid rgba(215, 215, 215, 0.9647058824);
+  border: 1px solid rgba(215, 215, 215, 0.9647058824);
 }
 form input.login {
   border: 0;
   border-bottom: 1px solid rgba(87, 87, 87, 0.9647058824);
+  border-radius: 0;
+}
+form input.login:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(215, 215, 215, 0.9647058824);
 }
 
 a {
@@ -321,11 +329,11 @@ a:hover {
 }
 
 .banner {
-  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .banner img {
   width: 100%;
-  height: 125px;
+  height: 115px;
   object-fit: cover;
   border-radius: 10px;
 }
