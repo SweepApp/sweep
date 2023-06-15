@@ -8,15 +8,6 @@ export default function Home() {
   const [api, setApi] = useState([]);
 
   let username = useSelector((state) => state.usersData.username);
-  let token = useSelector((state) => state.usersData.token);
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!token) {
-      navigate("/login");
-    }
-  }, [token, navigate]);
 
   function fetchData() {
     let apiLink = "http://localhost:8080/movies?api_key=test";
@@ -35,7 +26,7 @@ export default function Home() {
     <>
       <Upperbar id="top" title="Explore" />
       <div className="explore">
-        <h1>Hello, {username} 👋</h1>
+        <h1>{username ? `Hello, ${username} 👋` : 'Hello 👋'}</h1>
         <div className="explore_cards">
           <Card api={api} style="mini" />
         </div>
