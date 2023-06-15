@@ -69,6 +69,14 @@ nav li.active {
   background-color: #41b4e9;
   border-radius: 25%;
 }
+nav.log {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+nav.log button {
+  width: 150px;
+}
 
 .card__mini {
   position: relative;

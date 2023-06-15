@@ -28,4 +28,12 @@ nav {
       border-radius: 25%;
     }
   }
+  &.log {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  
+    button {
+      width: 150px;
+    }
+  } 
 }

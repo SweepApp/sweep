@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const token = useSelector((state) => state.usersData.token);
 
-  return token && (
+  return token ? (
     <nav>
       <ul>
         <li className={splitLocation[1] === "party" ? "active" : ""}>
@@ -16,7 +16,13 @@ export default function Navbar() {
             <i className="fa-solid fa-children fa-fw"></i>
           </a>
         </li>
-        <li className={splitLocation[1] === "explore" || splitLocation[1] === "details" ? "active" : ""}>
+        <li
+          className={
+            splitLocation[1] === "explore" || splitLocation[1] === "details"
+              ? "active"
+              : ""
+          }
+        >
           <a href="/explore">
             <i className="fa-solid fa-compass fa-fw"></i>
           </a>
@@ -28,5 +34,22 @@ export default function Navbar() {
         </li>
       </ul>
     </nav>
+  ) : (
+    splitLocation[1] === "explore" && (
+      <nav className="log">
+        <button
+          className="sign"
+          onClick={() => (window.location.href = "/login")}
+        >
+          Log in
+        </button>
+        <button
+          className="sign"
+          onClick={() => (window.location.href = "/signup")}
+        >
+          Sign up
+        </button>
+      </nav>
+    )
   );
 }
