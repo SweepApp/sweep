@@ -4,10 +4,15 @@ import Upperbar from "../components/Upperbar";
 export default function Details() {
   const movieDetails = useSelector((state) => state.movieDetails);
 
-    if (movieDetails.title === null) {
-      window.location.href = "/";
-      console.log('test')
-    }
+  if (movieDetails.title === null) {
+    window.location.href = "/";
+    console.log("test");
+  }
+
+  function sliceVote(vote) {
+    let voteString = vote.toString();
+    return voteString.slice(0, 3);
+  }
 
   function sliceDate(date) {
     return date.slice(0, 4);
@@ -39,8 +44,22 @@ export default function Details() {
               <h2>{movieDetails.tagline}</h2>
             </div>
             <div className="details__infos__header__row">
-              <span><i className="fa-regular fa-calendar"></i> {sliceDate(movieDetails.release_date)}</span>
-              <span><i className="fa-regular fa-clock"></i> {formatTime(movieDetails.runtime)}</span>
+              <span>
+                <i className="fa-regular fa-calendar"></i>{" "}
+                {sliceDate(movieDetails.release_date)}
+              </span>
+              <span>
+                <i className="fa-regular fa-clock"></i>{" "}
+                {formatTime(movieDetails.runtime)}
+              </span>
+              <span>
+                {movieDetails.vote_average >= 5 ? (
+                  <i className="fa-solid fa-fw fa-face-smile"></i>
+                ) : (
+                  <i className="fa-solid fa-fw fa-face-sad-tear"></i>
+                )}
+                {" "}{sliceVote(movieDetails.vote_average)}/10
+              </span>
             </div>
             <div className="details__infos__overview">
               <h3>Overview</h3>
@@ -49,9 +68,9 @@ export default function Details() {
             <div className="details__infos__genres">
               <h3>Genres</h3>
               <ul>
-                  {movieDetails.genres.slice(0, 3).map((genre) => (
-                    <li key={genre.id}>{genre}</li>
-                  ))}
+                {movieDetails.genres.slice(0, 3).map((genre) => (
+                  <li key={genre.id}>{genre}</li>
+                ))}
               </ul>
             </div>
             <div className="details__infos__credits">
@@ -59,23 +78,19 @@ export default function Details() {
               <table>
                 <tbody>
                   <tr>
-                  <td>
-                    {movieDetails.credits.slice(0, 4).map((actor, index) => (
-                      <span key={index}>
-                        {actor}
-                      </span>
-                    ))}
-                  </td>
-                  <hr />
-                  <td>
-                    {movieDetails.credits.slice(4, 8).map((actor, index) => (
-                      <span key={index}>
-                        {actor}
-                      </span>
-                    ))}
-                  </td>
+                    <td>
+                      {movieDetails.credits.slice(0, 4).map((actor, index) => (
+                        <span key={index}>{actor}</span>
+                      ))}
+                    </td>
+                    <hr />
+                    <td>
+                      {movieDetails.credits.slice(4, 8).map((actor, index) => (
+                        <span key={index}>{actor}</span>
+                      ))}
+                    </td>
                   </tr>
-                </tbody> 
+                </tbody>
               </table>
             </div>
             <div className="details__infos__details">

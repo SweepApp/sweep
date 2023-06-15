@@ -8,6 +8,7 @@ const movieDetailsInitialState = {
   poster_path: null,
   backdrop_path: null,
   overview: null,
+  vote_average: null,
   genres: [],
   production_companies: [],
   credits: [],
@@ -22,7 +23,7 @@ export const movieDetailsSlice = createSlice({
   initialState: movieDetailsInitialState,
   reducers: {
     setMovieDetails: (state, action) => {
-      const { title, tagline, release_date, runtime, poster_path, backdrop_path, overview, genres, production_companies, credits, revenue, budget, keywords, recommendations } = action.payload;
+      const { title, tagline, release_date, runtime, poster_path, backdrop_path, overview, vote_average, genres, production_companies, credits, revenue, budget, keywords, recommendations } = action.payload;
       state.title = title;
       state.tagline = tagline;
       state.release_date = release_date;
@@ -30,6 +31,7 @@ export const movieDetailsSlice = createSlice({
       state.poster_path = poster_path;
       state.backdrop_path = backdrop_path;
       state.overview = overview;
+      state.vote_average = vote_average;
       state.genres = Object.values(genres[0]).slice(0, -1).map(value => value.split('-')).join('').split(',');
       state.production_companies = Object.values(production_companies[0]).slice(0, -1).map(value => value.split('-')).join('').split(',');
       state.credits = credits.split('-');
