@@ -6,7 +6,6 @@ export const userInitialState = {
   avatar: null,
   isLoggedIn: false,
   token: null,
-  friends: [],
 };
 
 export const userSlice = createSlice({
@@ -14,13 +13,12 @@ export const userSlice = createSlice({
   initialState: userInitialState,
   reducers: {
     setAuth: (state, action) => {
-      const { username, email, avatar, isLoggedIn, token, friends } = action.payload;
+      const { username, email, avatar, isLoggedIn, token } = action.payload;
       state.username = username;
       state.email = email;
       state.avatar = avatar;
       state.isLoggedIn = isLoggedIn;
       state.token = token;
-      state.friends = friends;
     },
   },
 });

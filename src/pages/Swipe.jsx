@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import FriendCard from "../components/Friend";
 import Upperbar from "../components/Upperbar";
-import { friend } from "../redux/auth/action";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -34,7 +33,6 @@ export default function Home() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    dispatch(friend(token, friendsUsername))
     closeModal(); // Temporary solution for testing purposes
   };
 
@@ -51,19 +49,7 @@ export default function Home() {
         </div>
 
         <div className="duo__content">
-          {friend ? ( // Temporary solution for testing purposes
-            <>
-              <h2>{friends > 1 ? 'Friends' : 'Friend'} list</h2>
-              <FriendCard
-                image="../images/avatar/1.jpg"
-                name="tester"
-                delete={() => console.log("delete")}
-                invite={() => console.log("invite")}
-              />
-            </>
-          ) : (
-            <h2>Add friends to start swiping!</h2>
-          )}
+
           {modalState && (
             <div className="modal">
               <div className="modal__header">
