@@ -5,7 +5,7 @@ export default function Details() {
   const movieDetails = useSelector((state) => state.movieDetails);
 
   if (movieDetails.title === null) {
-    window.location.href = "/explore";
+    window.location.href = "/";
   }
 
   function sliceVote(vote) {
@@ -28,7 +28,7 @@ export default function Details() {
 
   return (
     <>
-      <Upperbar title={movieDetails.title} />
+      <Upperbar title={movieDetails.title} button="true" />
       <div className="details">
         {movieDetails.backdrop_path && (
           <div className="details__poster">

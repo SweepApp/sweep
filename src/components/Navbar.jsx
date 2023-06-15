@@ -18,12 +18,12 @@ export default function Navbar() {
         </li>
         <li
           className={
-            splitLocation[1] === "explore" || splitLocation[1] === "details"
+            splitLocation[1] === "" || splitLocation[1] === "details"
               ? "active"
               : ""
           }
         >
-          <a href="/explore">
+          <a href="/">
             <i className="fa-solid fa-compass fa-fw"></i>
           </a>
         </li>
@@ -35,7 +35,7 @@ export default function Navbar() {
       </ul>
     </nav>
   ) : (
-    splitLocation[1] === "explore" && (
+    splitLocation[1] === "" && (
       <nav className="log">
         <button
           className="sign"

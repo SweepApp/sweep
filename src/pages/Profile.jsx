@@ -19,12 +19,12 @@ export default function Home() {
 
   useEffect(() => {
     if (!token) {
-      navigate("/login", { replace: true });
+      navigate("/", { replace: true });
     }
   }, [token, navigate]);
 
   const handleLogout = () => {
-    navigate("/login");
+    navigate("/");
     navigate(0);
     clearPersistedState();
   };

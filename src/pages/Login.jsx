@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../redux/auth/action";
+import Upperbar from "../components/Upperbar";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -13,10 +14,12 @@ export default function Login() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     await dispatch(login(username, password));
-    navigate("/explore", { replace: true })
+    navigate("/", { replace: true })
   };
 
   return (
+    <>
+    <Upperbar title="Login" button="true" />
     <div className="login">
       <div className="sign">
         <div className="sign__container">
@@ -49,5 +52,6 @@ export default function Login() {
         </div>
       </div>
     </div>
+    </>
   );
 }
