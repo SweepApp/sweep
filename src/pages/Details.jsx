@@ -44,12 +44,16 @@ export default function Details() {
             </div>
             <div className="details__infos__header__row">
               <span>
-                <i className="fa-regular fa-calendar"></i>{" "}
-                {sliceDate(movieDetails.release_date)}
+                <i className="fa-regular fa-calendar"></i>
+                {movieDetails.release_date === 0
+                  ? "N/A"
+                  : sliceDate(movieDetails.release_date)}
               </span>
               <span>
-                <i className="fa-regular fa-clock"></i>{" "}
-                {formatTime(movieDetails.runtime)}
+                <i className="fa-regular fa-fw fa-clock"></i>
+                {movieDetails.runtime === 0
+                  ? "N/A"
+                  : formatTime(movieDetails.runtime)}
               </span>
               <span>
                 {movieDetails.vote_average >= 5 ? (
@@ -57,13 +61,14 @@ export default function Details() {
                 ) : (
                   <i className="fa-solid fa-fw fa-face-sad-tear"></i>
                 )}
-                {" "}{sliceVote(movieDetails.vote_average)}/10
+                {sliceVote(movieDetails.vote_average)}/10
               </span>
             </div>
             <div className="details__infos__overview">
               <h3>Overview</h3>
-              <p>{movieDetails.overview}</p>
+              <p>{movieDetails.overview ? movieDetails.overview : "N/A"}</p>
             </div>
+            {movieDetails.genres && (
             <div className="details__infos__genres">
               <h3>Genres</h3>
               <ul>
@@ -72,6 +77,7 @@ export default function Details() {
                 ))}
               </ul>
             </div>
+            )}
             <div className="details__infos__credits">
               <h3>Cast</h3>
               <table>
@@ -99,18 +105,30 @@ export default function Details() {
                     <tr>
                       <td className="title">Production</td>
                       <td>
-                        {movieDetails.production_companies.map((company) => (
-                          <span key={company.id}>{company}</span>
-                        ))}
+                        {movieDetails.production_companies ? (
+                          movieDetails.production_companies.map((company) => (
+                            <span key={company.id}>{company}</span>
+                          ))
+                        ) : (
+                          <span>N/A</span>
+                        )}
                       </td>
                     </tr>
                     <tr>
                       <td className="title">Budget</td>
-                      <td>{movieDetails.budget}$</td>
+                      {movieDetails.budget ? (
+                        <td>{movieDetails.budget}$</td>
+                      ) : (
+                        "N/A"
+                      )}
                     </tr>
                     <tr>
                       <td className="title">Revenue</td>
-                      <td>{movieDetails.revenue}$</td>
+                      {movieDetails.revenue ? (
+                        <td>{movieDetails.revenue}$</td>
+                      ) : (
+                        "N/A"
+                      )}
                     </tr>
                   </tbody>
                 </table>
